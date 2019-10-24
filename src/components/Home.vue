@@ -7,96 +7,50 @@
     <body class="front">
 
 
-    <!--Navbar ...... make this into component--> 
-    <nav class="navbar navbar-inverse navbar-static-top noSpace back">
+    <!--Navbar ...... make this into component-->
+    <nav>
+    <!-- <nav class="navbar navbar-inverse navbar-static-top noSpace back"> -->
       <div class="container-fluid">
+        <b-navbar type="dark" variant="light">
+          <h1> Regal Events Center </h1>
+        </b-navbar>
         <b-navbar type="dark" variant="dark">
           <b-navbar-nav>
             <b-nav-item href="#">Home</b-nav-item>
             <!-- Navbar dropdowns -->
-            <b-nav-item-dropdown text="Lang" right>
-              <b-dropdown-item href="#">EN</b-dropdown-item>
-              <b-dropdown-item href="#">ES</b-dropdown-item>
-              <b-dropdown-item href="#">RU</b-dropdown-item>
-              <b-dropdown-item href="#">FA</b-dropdown-item>
+            <!-- TODO: Fix dropdown text size -->
+            <b-nav-item-dropdown text="About Us" right>
+              <b-dropdown-item class="text" href="#">Grace</b-dropdown-item>
+              <b-dropdown-item href="#">Testimonials</b-dropdown-item>
             </b-nav-item-dropdown>
 
-            <b-nav-item-dropdown text="User" right>
-              <b-dropdown-item href="#">Account</b-dropdown-item>
-              <b-dropdown-item href="#">Settings</b-dropdown-item>
+            <b-nav-item href="#">Gallery</b-nav-item>
+
+            <b-nav-item-dropdown text="Events" right>
+              <b-dropdown-item href="#">Upcoming Events</b-dropdown-item>
+              <b-dropdown-item href="#">Past Events</b-dropdown-item>
+            </b-nav-item-dropdown>
+
+            <b-nav-item-dropdown text="Venue" right>
+              <b-dropdown-item href="#">Layout and Pricing</b-dropdown-item>
+              <b-dropdown-item href="#">Book Venue</b-dropdown-item>
+            </b-nav-item-dropdown>
+
+            <b-nav-item-dropdown text="Community" right>
+              <b-dropdown-item href="#">Bulletin</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-navbar>
       </div>
     </nav>
 
-    <nav>
-      <router-link to="/aboutus">Home</router-link>
-    </nav>
-
-    <router-link :to="{name: 'aboutus'}">
-      <button> Login </button>
-    </router-link>
-      <!-- <div> -->
-        <!-- <b-navbar type="dark" variant="dark"> -->
-          <!-- <b-navbar-nav> -->
-            <!-- <b-nav-item href="#">Home</b-nav-item> -->
-            <!-- Navbar dropdowns -->
-            <!-- <b-nav-item-dropdown text="Lang" right> -->
-              <!-- <b-dropdown-item href="#">EN</b-dropdown-item> -->
-              <!-- <b-dropdown-item href="#">ES</b-dropdown-item> -->
-              <!-- <b-dropdown-item href="#">RU</b-dropdown-item> -->
-              <!-- <b-dropdown-item href="#">FA</b-dropdown-item> -->
-            <!-- </b-nav-item-dropdown> -->
-            <!-- <b-nav-item-dropdown text="User" right> -->
-              <!-- <b-dropdown-item href="#">Account</b-dropdown-item> -->
-              <!-- <b-dropdown-item href="#">Settings</b-dropdown-item> -->
-            <!-- </b-nav-item-dropdown> -->
-          <!-- </b-navbar-nav> -->
-        <!-- </b-navbar> -->
-      <!-- </div> -->
-
     <div class="container-fluid" >
-        <div class="row mid">
-
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <img src="pic.jpg" alt="Alt text" style="width:100%; height:300px;">
-              <div class="carousel-caption">
-                  <h3>Main Room</h3>
-                  <p>Contact us for availability</p>
-                </div>
-               </div>
-               <div class="item">
-                 <img src="pic.jpg" alt="Alt text" style="width:100%; height:300px;">
-                 <div class="carousel-caption">
-                  <h3>Main Room</h3>
-                  <p>Contact us for availability</p>
-                 </div>
-               </div>
-             </div>
-
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-               <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-            </div>
-          </div>
+      <mdb-carousel :interval="8000" showControls showIndicators>
+        <mdb-carousel-item img src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide" />
+        <mdb-carousel-item img src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide" />
+        <mdb-carousel-item img src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide" />
+      </mdb-carousel>
+    </div>
 
     <div class="container">
       <div class="row">
@@ -104,6 +58,14 @@
           <div class="panel">
           <div class="panel-heading mid"> Buttons </div>
           <div class="panel-body back">
+            <nav>
+              <router-link to="/aboutus">AboutUs route test</router-link>
+            </nav>
+
+            <router-link :to="{name: 'aboutus'}">
+              <button> AboutUs route test </button>
+            </router-link>
+
             <button type="button" class="btn go">Forward</button>
             <button type="button" class="btn danger">Back</button>
             <button type="button" class="btn mid">miscellaneous</button>
@@ -158,8 +120,14 @@
 </template>
 
 <script>
+import { mdbCarousel, mdbCarouselItem } from 'mdbvue';
+
 export default {
   name: 'Home',
+  components: {
+    mdbCarousel,
+    mdbCarouselItem
+  },
   props: {
     msg: String
   }
@@ -184,5 +152,13 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.container-fluid {
+  font-size: 20px;
+}
+
+.text {
+  font-size: 10px;
 }
 </style>
