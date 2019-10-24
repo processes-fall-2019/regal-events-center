@@ -19,24 +19,24 @@
               <!-- Navbar dropdowns -->
               <!-- TODO: Fix dropdown text size -->
               <b-nav-item-dropdown text="About Us" right>
-                <b-dropdown-item class="text" href="#">Grace</b-dropdown-item>
-                <b-dropdown-item href="#">Testimonials</b-dropdown-item>
+                <b-dropdown-item class="text" href="#/grace">Grace</b-dropdown-item>
+                <b-dropdown-item href="#/testimonials">Testimonials</b-dropdown-item>
               </b-nav-item-dropdown>
 
               <b-nav-item href="#/gallery">Gallery</b-nav-item>
 
               <b-nav-item-dropdown text="Events" right>
-                <b-dropdown-item href="#">Upcoming Events</b-dropdown-item>
-                <b-dropdown-item href="#">Past Events</b-dropdown-item>
+                <b-dropdown-item href="#/upcomingevents">Upcoming Events</b-dropdown-item>
+                <b-dropdown-item href="#/pastevents">Past Events</b-dropdown-item>
               </b-nav-item-dropdown>
 
               <b-nav-item-dropdown text="Venue" right>
-                <b-dropdown-item href="#">Layout and Pricing</b-dropdown-item>
-                <b-dropdown-item href="#">Book Venue</b-dropdown-item>
+                <b-dropdown-item href="#/venuelayout">Layout and Pricing</b-dropdown-item>
+                <b-dropdown-item href="#/bookvenue">Book Venue</b-dropdown-item>
               </b-nav-item-dropdown>
 
               <b-nav-item-dropdown text="Community" right>
-                <b-dropdown-item href="#">Bulletin</b-dropdown-item>
+                <b-dropdown-item href="#/bulletin">Bulletin</b-dropdown-item>
               </b-nav-item-dropdown>
             </b-navbar-nav>
           </b-navbar>

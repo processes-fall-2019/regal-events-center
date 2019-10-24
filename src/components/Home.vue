@@ -23,14 +23,6 @@
           <div class="panel">
           <div class="panel-heading mid"> Buttons </div>
           <div class="panel-body back">
-            <nav>
-              <router-link to="/aboutus">AboutUs route test</router-link>
-            </nav>
-
-            <router-link :to="{name: 'aboutus'}">
-              <button> AboutUs route test </button>
-            </router-link>
-
             <button type="button" class="btn go">Forward</button>
             <button type="button" class="btn danger">Back</button>
             <button type="button" class="btn mid">miscellaneous</button>
