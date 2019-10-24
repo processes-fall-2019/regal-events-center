@@ -5,45 +5,10 @@
       <link rel="stylesheet" type="text/css" href="pal.css">
     </head>
     <body class="front">
+    <!--Navbar-->
+    <NavigationBar></NavigationBar>
 
-
-    <!--Navbar ...... make this into component-->
-    <nav>
-    <!-- <nav class="navbar navbar-inverse navbar-static-top noSpace back"> -->
-      <div class="container-fluid">
-        <b-navbar type="dark" variant="light">
-          <h1> Regal Events Center </h1>
-        </b-navbar>
-        <b-navbar type="dark" variant="dark">
-          <b-navbar-nav>
-            <b-nav-item href="#">Home</b-nav-item>
-            <!-- Navbar dropdowns -->
-            <!-- TODO: Fix dropdown text size -->
-            <b-nav-item-dropdown text="About Us" right>
-              <b-dropdown-item class="text" href="#">Grace</b-dropdown-item>
-              <b-dropdown-item href="#">Testimonials</b-dropdown-item>
-            </b-nav-item-dropdown>
-
-            <b-nav-item href="#">Gallery</b-nav-item>
-
-            <b-nav-item-dropdown text="Events" right>
-              <b-dropdown-item href="#">Upcoming Events</b-dropdown-item>
-              <b-dropdown-item href="#">Past Events</b-dropdown-item>
-            </b-nav-item-dropdown>
-
-            <b-nav-item-dropdown text="Venue" right>
-              <b-dropdown-item href="#">Layout and Pricing</b-dropdown-item>
-              <b-dropdown-item href="#">Book Venue</b-dropdown-item>
-            </b-nav-item-dropdown>
-
-            <b-nav-item-dropdown text="Community" right>
-              <b-dropdown-item href="#">Bulletin</b-dropdown-item>
-            </b-nav-item-dropdown>
-          </b-navbar-nav>
-        </b-navbar>
-      </div>
-    </nav>
-
+    <!--Carousel-->
     <div class="container-fluid" >
       <mdb-carousel :interval="8000" showControls showIndicators>
         <mdb-carousel-item img src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide" />
@@ -121,12 +86,14 @@
 
 <script>
 import { mdbCarousel, mdbCarouselItem } from 'mdbvue';
+import NavigationBar from './NavigationBar'
 
 export default {
   name: 'Home',
   components: {
     mdbCarousel,
-    mdbCarouselItem
+    mdbCarouselItem,
+    NavigationBar
   },
   props: {
     msg: String
