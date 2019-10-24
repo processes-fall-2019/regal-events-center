@@ -1,45 +1,60 @@
 <template>
   <div class="hello">
     <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-      <!-- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-      <!-- // <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
       <link rel="stylesheet" type="text/css" href="pal.css">
     </head>
     <body class="front">
 
-    <!--Navbar -->
+
+    <!--Navbar ...... make this into component--> 
     <nav class="navbar navbar-inverse navbar-static-top noSpace back">
       <div class="container-fluid">
+        <b-navbar type="dark" variant="dark">
+          <b-navbar-nav>
+            <b-nav-item href="#">Home</b-nav-item>
+            <!-- Navbar dropdowns -->
+            <b-nav-item-dropdown text="Lang" right>
+              <b-dropdown-item href="#">EN</b-dropdown-item>
+              <b-dropdown-item href="#">ES</b-dropdown-item>
+              <b-dropdown-item href="#">RU</b-dropdown-item>
+              <b-dropdown-item href="#">FA</b-dropdown-item>
+            </b-nav-item-dropdown>
 
-       <div class="navbar-header">
-         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Regal Events Center</a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-              <li><a href="#">Page 1-1</a></li>
-              <li><a href="#">Page 1-2</a></li>
-              <li><a href="#">Page 1-3</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Page 2</a></li>
-          <li><a href="#">Page 3</a></li>
-        </ul>
-      </div>
+            <b-nav-item-dropdown text="User" right>
+              <b-dropdown-item href="#">Account</b-dropdown-item>
+              <b-dropdown-item href="#">Settings</b-dropdown-item>
+            </b-nav-item-dropdown>
+          </b-navbar-nav>
+        </b-navbar>
       </div>
     </nav>
+
+    <nav>
+      <router-link to="/aboutus">Home</router-link>
+    </nav>
+
+    <router-link :to="{name: 'aboutus'}">
+      <button> Login </button>
+    </router-link>
+      <!-- <div> -->
+        <!-- <b-navbar type="dark" variant="dark"> -->
+          <!-- <b-navbar-nav> -->
+            <!-- <b-nav-item href="#">Home</b-nav-item> -->
+            <!-- Navbar dropdowns -->
+            <!-- <b-nav-item-dropdown text="Lang" right> -->
+              <!-- <b-dropdown-item href="#">EN</b-dropdown-item> -->
+              <!-- <b-dropdown-item href="#">ES</b-dropdown-item> -->
+              <!-- <b-dropdown-item href="#">RU</b-dropdown-item> -->
+              <!-- <b-dropdown-item href="#">FA</b-dropdown-item> -->
+            <!-- </b-nav-item-dropdown> -->
+            <!-- <b-nav-item-dropdown text="User" right> -->
+              <!-- <b-dropdown-item href="#">Account</b-dropdown-item> -->
+              <!-- <b-dropdown-item href="#">Settings</b-dropdown-item> -->
+            <!-- </b-nav-item-dropdown> -->
+          <!-- </b-navbar-nav> -->
+        <!-- </b-navbar> -->
+      <!-- </div> -->
 
     <div class="container-fluid" >
         <div class="row mid">
@@ -153,6 +168,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+* {
+  margin: 0;
+}
 h3 {
   margin: 40px 0 0;
 }
