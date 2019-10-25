@@ -37,6 +37,18 @@
           <h3>Column 3</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
           <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+          <!-- <mdb-google-map
+            name="reg"
+            class="col-md-12"
+            style=" height: 500px"
+            :zoom="14"
+            :markerCoordinates="[{
+              latitude: 40.725118,
+              longitude: -73.997699,
+              title: 'New York'
+            }]">
+          </mdb-google-map> -->
         </div>
       </div>
 
@@ -89,7 +101,7 @@ export default {
   components: {
     mdbCarousel,
     mdbCarouselItem,
-    NavigationBar
+    NavigationBar,
   },
   props: {
     msg: String
