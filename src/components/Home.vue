@@ -2,7 +2,6 @@
   <div class="hello">
     <head>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="pal.css">
     </head>
     <body class="front">
     <!--Navbar-->
@@ -44,33 +43,31 @@
       <!-- new row, also a form -->
       <div class="row">
         <div class="col-sm-4">
-          <div class="panel">
             <div class="panel-heading mid"> Contact us </div>
             <div class="panel-body back">
               <form class="form-horizontal">
                 <div class="form-group">
                   <label class="control-label col-sm-3" for="email">Email:</label>
                   <div class="col-sm-9">
-                      <input type="email" class="form-control" id="email" placeholder="Enter email">
+                      <input class="form-control" id="email" name="email" v-model="email" type="email"  placeholder="Enter email">
                     </div>
                   </div>
                 <div class="form-group">
                   <label class="control-label col-sm-3" for="text">Message:</label>
                   <div class="col-sm-9">
-                      <textarea type="input" class="form-control" id="text" placeholder="Enter message"> </textarea>
+                      <textarea type="input" class="form-control" id="text" name="message" v-model="message" placeholder="Enter message"> </textarea>
                     </div>
                   </div>
                 <div class="form-group">
                   <div class="col-sm-offset-3 col-sm-9">
-                    <button type="button" class="btn go">Submit</button>
-                    <button type="button" class="btn danger">Cancel</button>
+                    <button @click="handleSubmitButton" type="button" class="btn go">Submit</button>
+                    <button @click="handleCancelButton" type="button" class="btn danger">Cancel</button>
                   </div>
                 </div>
               </form>
             </div>
-          </div>
         </div>
-      </div>
+      </div> <!-- here -->
     </div>
     </body>
   </div>
@@ -82,6 +79,13 @@ import NavigationBar from './NavigationBar'
 
 export default {
   name: 'Home',
+  data () {
+    return {
+      email: '',
+      message: '',
+      error: null,
+    }
+  },
   components: {
     mdbCarousel,
     mdbCarouselItem,
@@ -89,6 +93,18 @@ export default {
   },
   props: {
     msg: String
+  },
+  methods: {
+    handleSubmitButton () {
+      // eslint-disable-next-line
+      console.log("Email", this.email);
+      // eslint-disable-next-line
+      console.log("Message", this.message);
+    },
+    handleCancelButton () {
+      this.email = ''
+      this.message = ''
+    }
   }
 }
 </script>
