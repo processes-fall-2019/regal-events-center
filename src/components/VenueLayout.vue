@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavigationBar></NavigationBar>
-    <h1> Venue Layout </h1>
+    <h1> Layout and Pricing </h1>
   </div>
 </template>
 
