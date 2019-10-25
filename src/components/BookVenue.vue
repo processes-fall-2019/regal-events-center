@@ -1,6 +1,11 @@
 <template>
   <div>
     <NavigationBar></NavigationBar>
+    <div>
+      <b-alert v-model="showDismissibleAlert" variant="success" dismissible>
+        You have successfully submitted your booking request! We will get back to you via email within 24 hrs.
+      </b-alert>
+    </div>
     <h1> Book Venue </h1>
 
     <div class="form">
@@ -64,7 +69,7 @@
           </b-form-checkbox-group>
         </b-form-group>
 
-        <b-button type="submit" pill variant="success">Submit</b-button>
+        <b-button @click="showAlert" type="submit" pill variant="success">Submit</b-button>
         <b-button type="reset" pill variant="danger">Reset</b-button>
       </b-form>
     </div>
@@ -92,7 +97,8 @@ export default {
           number: '',
           name: '',
           layout: null,
-          checked: []
+          checked: [],
+          showDismissibleAlert: false
         },
         layouts: [{ text: 'Select One', value: null }, 'Main Room', 'East Wing', 'West Wing', 'South Wing'],
         show: true
@@ -101,13 +107,19 @@ export default {
     methods: {
       onSubmit(evt) {
         evt.preventDefault()
-        alert(JSON.stringify(this.form))
+        // alert(JSON.stringify(this.form))
+        this.showDismissibleAlert = true
+        this.show = false
+        this.$nextTick(() => {
+          this.show = true
+        })
       },
       onReset(evt) {
         evt.preventDefault()
         // Reset our form values
         this.form.email = ''
         this.form.name = ''
+        this.showDismissibleAlert = false
         this.form.number = ''
         this.form.layout = null
         this.form.checked = []
@@ -116,7 +128,7 @@ export default {
         this.$nextTick(() => {
           this.show = true
         })
-      }
+      },
     }
   }
 </script>
