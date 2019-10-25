@@ -4,7 +4,10 @@
 
     <lightbox
         :images="images"
-        title="Feed Gallery"
+        title="Photo Gallery"
+        :loop="true"
+        :nav="true"
+        :caption="true"
     ></lightbox>
   </div>
 </template>
