@@ -98,8 +98,8 @@ export default {
           name: '',
           layout: null,
           checked: [],
-          showDismissibleAlert: false
         },
+        showDismissibleAlert: false,
         layouts: [{ text: 'Select One', value: null }, 'Main Room', 'East Wing', 'West Wing', 'South Wing'],
         show: true
       }
