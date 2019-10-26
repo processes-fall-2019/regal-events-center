@@ -69,7 +69,7 @@
           </b-form-checkbox-group>
         </b-form-group>
 
-        <b-button @click="showAlert" type="submit" pill variant="success">Submit</b-button>
+        <b-button type="submit" pill variant="success">Submit</b-button>
         <b-button type="reset" pill variant="danger">Reset</b-button>
       </b-form>
     </div>
