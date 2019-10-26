@@ -2,6 +2,7 @@
   <div id="UpcomingEvents">
     <NavigationBar></NavigationBar>
     <h1> Upcoming Events </h1>
+    <br>
 
     <div class="calendar">
       <calendar-view
@@ -47,8 +48,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .calendar {
-  display: inline-block;
   width: 1100px;
   height: 650px;
+  position:relative;
+  display:inline-block;
+  top:50%;
 }
 </style>
