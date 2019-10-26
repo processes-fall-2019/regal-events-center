@@ -18,44 +18,8 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
-          <div class="panel">
-          <div class="panel-heading mid"> Buttons </div>
-          <div class="panel-body back">
-            <b-button size="lg" variant="success">Forward</b-button>
-            <b-button size="lg" variant="danger">Back</b-button>
-            <b-button size="lg" variant="primary">miscellaneous</b-button>
-          </div>
-        </div>
-        </div>
-        <div class="col-sm-4">
-          <h3>Regal Events Center</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-        </div>
-        <div class="col-sm-4">
-          <h3>Column 3</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-
-          <!-- <mdb-google-map
-            name="reg"
-            class="col-md-12"
-            style=" height: 500px"
-            :zoom="14"
-            :markerCoordinates="[{
-              latitude: 40.725118,
-              longitude: -73.997699,
-              title: 'New York'
-            }]">
-          </mdb-google-map> -->
-        </div>
-      </div>
-
-      <!-- new row, also a form -->
-      <div class="row">
-        <div class="col-sm-4">
-            <div class="panel-heading mid"> Contact us </div>
+        <div class="col-sm-6">
+            <div class="panel-heading mid"> Want more info? Contact us </div>
             <div class="panel-body back">
               <form class="form-horizontal">
                 <div class="form-group">
@@ -79,7 +43,29 @@
               </form>
             </div>
         </div>
-      </div> <!-- here -->
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-sm-4">
+          <h3>Regal Events Center</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <h3> Regal Events Center</h3>
+      <p> 177 Anchor Rd </p>
+      <p> Casselberry, FL, 32707</p>
+      <br>
+      <static-map :google-api-key="apiKey" :format="format" :markers="markers" :zoom="zoom" :center="center" :size="size" :type="type" :language="language"></static-map>
+      <br>
+      <br>
+      <div>
+        <b-button href="https://www.google.com/maps/place/Casselberry,+FL+32707/@28.6679392,-81.3472437,17z/data=!3m1!4b1!4m5!3m4!1s0x88e771fc709ad4d7:0x3283e0b5cba6fd8e!8m2!3d28.667934!4d-81.345055" size="lg" pill variant="primary">Get Directions</b-button>
+      </div>
+      <br>
+      <br>
     </div>
     </body>
   </div>
@@ -88,6 +74,7 @@
 <script>
 import { mdbCarousel, mdbCarouselItem } from 'mdbvue';
 import NavigationBar from './NavigationBar'
+import StaticMap from 'vue-static-map'
 
 export default {
   name: 'Home',
@@ -96,12 +83,25 @@ export default {
       email: '',
       message: '',
       error: null,
+      apiKey: 'AIzaSyDtLtZiko5ZN-t4BZbYSfTiXJwBlD9uL9I',
+      zoom: 13,
+      center: 'Casselberry,FL',
+      format: 'gif',
+      language: 'en',
+      markers: [
+      {
+       label: '', color: 'red', lat: 28.667869, lng: -81.345280, size: 'normal',
+      },
+      ],
+      type: 'roadmap',
+      size: [800, 400],
     }
   },
   components: {
     mdbCarousel,
     mdbCarouselItem,
     NavigationBar,
+    StaticMap,
   },
   props: {
     msg: String
@@ -116,7 +116,7 @@ export default {
     handleCancelButton () {
       this.email = ''
       this.message = ''
-    }
+    },
   }
 }
 </script>
@@ -143,9 +143,18 @@ a {
 
 .container-fluid {
   font-size: 20px;
+  display:inline-block;
+  margin: auto;
+  text-align: center;
 }
 
 .text {
   font-size: 10px;
+}
+
+.map {
+  display:inline-block;
+  margin: auto;
+  text-align: center;
 }
 </style>
