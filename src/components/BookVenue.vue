@@ -7,80 +7,110 @@
       </b-alert>
     </div>
     <h1> Book Venue </h1>
+    <b-container>
+      <b-row align-h="center" class="mt-5">
+        <b-col cols="11">
+          <b-card class="p-3">
+            <div class="form">
+              <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+                <b-form-group
+                  id="input-group-1"
+                  label="Email address:"
+                  label-for="input-1"
+                  description="We'll never share your email with anyone else."
+                >
 
-    <div class="form">
-      <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-        <b-form-group
-          id="input-group-1"
-          label="Email address:"
-          label-for="input-1"
-          description="We'll never share your email with anyone else."
-        >
+                  <b-form-input
+                    id="input-1"
+                    v-model="form.email"
+                    type="email"
+                    required
+                    placeholder="Enter email"
+                  ></b-form-input>
 
-          <b-form-input
-            id="input-1"
-            v-model="form.email"
-            type="email"
-            required
-            placeholder="Enter email"
-          ></b-form-input>
+                </b-form-group>
 
-        </b-form-group>
+                <b-form-group
+                  id="input-group-2"
+                  label="Phone Number:"
+                  label-for="input-1"
+                  description="We'll never share your phone number with anyone else."
+                >
 
-        <b-form-group
-          id="input-group-2"
-          label="Phone Number:"
-          label-for="input-1"
-          description="We'll never share your phone number with anyone else."
-        >
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.number"
+                    type="number"
+                    required
+                    placeholder="Enter phone number"
+                  ></b-form-input>
 
-          <b-form-input
-            id="input-2"
-            v-model="form.number"
-            type="number"
-            required
-            placeholder="Enter phone number"
-          ></b-form-input>
+                </b-form-group>
 
-        </b-form-group>
+                <b-form-group id="input-group-3" label="Your Name:" label-for="input-3">
+                  <b-form-input
+                    id="input-3"
+                    v-model="form.name"
+                    required
+                    placeholder="Enter name"
+                  ></b-form-input>
+                </b-form-group>
 
-        <b-form-group id="input-group-3" label="Your Name:" label-for="input-3">
-          <b-form-input
-            id="input-3"
-            v-model="form.name"
-            required
-            placeholder="Enter name"
-          ></b-form-input>
-        </b-form-group>
+                <b-form-group id="input-group-4" label="Layout:" label-for="input-4">
+                  <b-form-select
+                    id="input-4"
+                    v-model="form.layout"
+                    :options="layouts"
+                    required
+                  ></b-form-select>
+                </b-form-group>
 
-        <b-form-group id="input-group-4" label="Layout:" label-for="input-4">
-          <b-form-select
-            id="input-4"
-            v-model="form.layout"
-            :options="layouts"
-            required
-          ></b-form-select>
-        </b-form-group>
+                <b-form-group id="input-group-5" label="Desired date:" label-for="input-5">
+                  <b-form-input
+                    id="input-5"
+                    v-model="form.date"
+                    required
+                    placeholder="Enter desired booking date (DD/MM/YYYY) or select date from calendar below."
+                  ></b-form-input>
+                  <br />
+                  <datepicker placeholder="Select Date" v-model="form.date"></datepicker>
+                </b-form-group>
 
-        <b-form-group id="input-group-5">
-          <b-form-checkbox-group v-model="form.checked" id="checkboxes-5">
-            <b-form-checkbox value="me">Check me out</b-form-checkbox>
-            <b-form-checkbox value="that">Check that out</b-form-checkbox>
-          </b-form-checkbox-group>
-        </b-form-group>
+                <b-form-group id="input-group-6">
+                  <b-form-checkbox-group v-model="form.checked" id="checkboxes-6">
+                    <b-form-checkbox value="me">Check me out</b-form-checkbox>
+                    <b-form-checkbox value="that">Check that out</b-form-checkbox>
+                  </b-form-checkbox-group>
+                </b-form-group>
 
-        <b-button type="submit" pill variant="success">Submit</b-button>
-        <b-button type="reset" pill variant="danger">Reset</b-button>
-      </b-form>
-    </div>
-    <!-- <b-card class="mt-3" header="Form Data Result">
+                <b-button type="submit" pill variant="success">Submit</b-button>
+                <b-button type="reset" pill variant="danger">Reset</b-button>
+              </b-form>
+            </div>
+          </b-card>
+        </b-col>
+      </b-row>
+    </b-container>
+<!--
+    <b-card class="mt-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
     </b-card> -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
 </template>
 
 <script>
 import NavigationBar from './NavigationBar'
+import Datepicker from 'vuejs-datepicker'
 
 export default {
     name: 'BookVenue',
@@ -88,7 +118,8 @@ export default {
       msg: String
     },
     components: {
-      NavigationBar
+      NavigationBar,
+      Datepicker
     },
     data() {
       return {
@@ -97,6 +128,7 @@ export default {
           number: '',
           name: '',
           layout: null,
+          date: '',
           checked: [],
         },
         showDismissibleAlert: false,
@@ -119,6 +151,7 @@ export default {
         // Reset our form values
         this.form.email = ''
         this.form.name = ''
+        this.form.date = ''
         this.showDismissibleAlert = false
         this.form.number = ''
         this.form.layout = null
