@@ -78,6 +78,10 @@ a {
 }
 
 .text {
-  font-size: 10px;
+  font-size: 20px;
+}
+
+.color {
+  background: Orange;
 }
 </style>
