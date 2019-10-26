@@ -16,43 +16,53 @@
       </mdb-carousel>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-            <div class="panel-heading mid"> Want more info? Contact us </div>
+    <b-container>
+      <b-row>
+        <b-col cols="6">
+          <br />
+          <b-card>
+            <div class="panel-heading mid"> Want to learn more? Sign up for our newsletters. </div>
             <div class="panel-body back">
-              <form class="form-horizontal">
+              <b-form class="form-horizontal">
                 <div class="form-group">
                   <label class="control-label col-sm-3" for="email">Email:</label>
                   <div class="col-sm-9">
-                      <input class="form-control" id="email" name="email" v-model="email" type="email"  placeholder="Enter email">
-                    </div>
+                    <input class="form-control" id="email" name="email" v-model="email" type="email"  placeholder="Enter email">
                   </div>
+                </div>
                 <div class="form-group">
                   <label class="control-label col-sm-3" for="text">Message:</label>
                   <div class="col-sm-9">
-                      <textarea type="input" class="form-control" id="text" name="message" v-model="message" placeholder="Enter message"> </textarea>
-                    </div>
+                    <textarea type="input" class="form-control" id="text" name="message" v-model="message" placeholder="Enter message"> </textarea>
                   </div>
+                </div>
                 <div class="form-group">
                   <div class="col-sm-offset-3 col-sm-9">
                     <b-button @click="handleSubmitButton" size="lg" pill variant="success">Submit</b-button>
                     <b-button @click="handleCancelButton" size="lg" pill variant="danger">Cancel</b-button>
                   </div>
                 </div>
-              </form>
+              </b-form>
             </div>
-        </div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div class="col-sm-4">
-          <h3>Regal Events Center</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-        </div>
-      </div>
-    </div>
+          </b-card>
+        </b-col>
+        <b-col>
+          <div class="panel-body back">
+            <b-card>
+              <b-col cols="11">
+                <h3>Our Mission</h3>
+                 <br>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                 <p>Ut enim ad minim veniam, quis nostrud exercitatio</p>
+                 <p>Ut enim ad minim veniam, quis nostrud exercitatio</p>
+              </b-col>
+            </b-card>
+          </div>
+        </b-col>
+      </b-row>
+    </b-container>
     <div class="container-fluid">
       <h3> Regal Events Center</h3>
       <p> 177 Anchor Rd </p>
