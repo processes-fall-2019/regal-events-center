@@ -69,11 +69,11 @@
                   <b-form-input
                     id="input-5"
                     v-model="form.date"
+                    type="date"
                     required
                     placeholder="Enter desired booking date (DD/MM/YYYY) or select date from calendar below."
                   ></b-form-input>
                   <br />
-                  <datepicker placeholder="Select Date" v-model="form.date"></datepicker>
                 </b-form-group>
 
                 <b-form-group id="input-group-6">
@@ -110,7 +110,7 @@
 
 <script>
 import NavigationBar from './NavigationBar'
-import Datepicker from 'vuejs-datepicker'
+// import Datepicker from 'vuejs-datepicker'
 
 export default {
     name: 'BookVenue',
@@ -119,7 +119,7 @@ export default {
     },
     components: {
       NavigationBar,
-      Datepicker
+      // Datepicker
     },
     data() {
       return {
