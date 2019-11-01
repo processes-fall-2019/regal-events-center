@@ -17,6 +17,7 @@
             <li><a href="#/grace">Grace</a></li>
             <li><a href="#/testimonials">Testimonials</a></li>
             <li><a href="#/gallery">Gallery</a></li>
+            <li><a href="#/bulletin">Bulletin</a></li>
           </ul>
         </mdb-col>
         <hr class="clearfix w-100 d-md-none" />
@@ -33,7 +34,7 @@
         <mdb-col md="2">
           <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
           <ul class="list-unstyled">
-            <li><a href="#/bulletin">Bulletin</a></li>
+            <li><a href="#/admin">Admin Login</a></li>
           </ul>
         </mdb-col>
       </mdb-row>
@@ -45,7 +46,7 @@
         <li class="list-inline-item">
           <h5 class="mb-1">Reserve an event today</h5>
         </li>
-        <li class="list-inline-item"><a href="#" class="btn btn-primary btn-rounded">Book an event!</a></li>
+        <li class="list-inline-item"><a href="#/bookvenue" class="btn btn-primary btn-rounded">Book an event!</a></li>
       </ul>
     </div>
     <hr />
