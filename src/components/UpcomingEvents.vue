@@ -1,5 +1,5 @@
 <template>
-  <div id="UpcomingEvents">
+  <div class="app">
     <NavigationBar></NavigationBar>
     <h1> Upcoming Events </h1>
     <br>
@@ -7,6 +7,7 @@
     <div class="calendar">
       <calendar-view
         :show-date="showDate"
+        :events="events"
         class="theme-default holiday-us-traditional holiday-us-official">
           <calendar-view-header
             slot="header"
@@ -28,12 +29,26 @@
 import NavigationBar from './NavigationBar'
 import Footer from './Footer'
 import { CalendarView, CalendarViewHeader } from 'vue-simple-calendar'
+// import AuthenticationService from '../services/AuthenticationService'
 
 export default {
   name: 'UpcomingEvents',
   data () {
     return {
-      showDate: new Date()
+      showDate: new Date(),
+      events: [
+        {
+          id: 'e1',
+          startDate: '2019-11-30',
+          endDate: '2019-11-31',
+          title: 'R.E.C Opening Ceremony'
+        },
+        {
+          startDate: '2019-11-06',
+          endDate: '2019-11-07',
+          title: 'Sample event 2'
+        }
+      ]
     }
   },
   props: {
@@ -43,12 +58,16 @@ export default {
     NavigationBar,
     CalendarView,
     CalendarViewHeader,
-    Footer
+    Footer,
+    // AuthenticationService
   },
   methods: {
     setShowDate(d) {
       this.showDate = d;
     },
+  },
+  async created () {
+
   }
 }
 </script>
