@@ -35,48 +35,15 @@
 import NavigationBar from './NavigationBar'
 import VueBootstrap4Table from 'vue-bootstrap4-table'
 import Footer from './Footer'
+import AuthenticationService from '../services/AuthenticationService'
 // import PastEventModal from "./PastEventModal.vue"
 
 export default {
   name: 'PastEvents',
   data () {
     return {
-      rows: [{
-        "id": 1,
-        "name": "Grace event",
-        "location": "Orlando",
-        "date_held": "12/07/2018",
-      },
-      {
-        "id": 2,
-        "name": "The Carter's Wedding",
-        "location": "California",
-        "date_held": "04/07/2017",
-      },
-      {
-        "id": 3,
-        "name": "Meet Your Community",
-        "location": "Orlando",
-        "date_held": "01/01/2018",
-      },
-      {
-        "id": 4,
-        "name": "Meet Your Community",
-        "location": "Orlando",
-        "date_held": "01/01/2018",
-      },
-      {
-        "id": 5,
-        "name": "Meet Your Community",
-        "location": "Orlando",
-        "date_held": "01/01/2018",
-      },
-      {
-        "id": 6,
-        "name": "Meet Your Community",
-        "location": "Orlando",
-        "date_held": "01/01/2018",
-      }],
+      test: 1,
+      rows: [],
       columns: [{
         label: "id",
         name: "id",
@@ -101,8 +68,8 @@ export default {
         },
       },
       {
-        label: "Location",
-        name: "location",
+        label: "Organizer",
+        name: "organizer",
         filter: {
           type: "simple",
           placeholder: "Search Location"
@@ -137,6 +104,23 @@ export default {
     Footer
   },
   methods: {
+  },
+  async created () {
+    try {
+        const response = await AuthenticationService.getPastEvents({
+          event_id: this.test
+        })
+
+        // eslint-disable-next-line
+        console.log('the resssssy', response)
+
+        this.rows = response.data
+
+        return response
+      } catch (error) {
+        // eslint-disable-next-line
+        console.log(error);
+      }
   }
 }
 </script>
