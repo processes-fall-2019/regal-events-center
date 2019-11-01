@@ -2,18 +2,22 @@
   <div>
     <NavigationBar></NavigationBar>
     <h1> Grace </h1>
+    <Footer> </Footer>
   </div>
 </template>
 
 <script>
 import NavigationBar from './NavigationBar'
+import Footer from './Footer'
+
 export default {
   name: 'Grace',
   props: {
     msg: String
   },
   components: {
-    NavigationBar
+    NavigationBar,
+    Footer
   }
 }
 </script>

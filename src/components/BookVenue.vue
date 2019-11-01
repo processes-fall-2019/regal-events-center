@@ -103,14 +103,13 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
+    <Footer> </Footer>
   </div>
 </template>
 
 <script>
 import NavigationBar from './NavigationBar'
-// import Datepicker from 'vuejs-datepicker'
+import Footer from './Footer'
 
 export default {
     name: 'BookVenue',
@@ -119,7 +118,7 @@ export default {
     },
     components: {
       NavigationBar,
-      // Datepicker
+      Footer
     },
     data() {
       return {

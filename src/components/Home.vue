@@ -78,12 +78,14 @@
       <br>
     </div>
     </body>
+    <Footer> </Footer>
   </div>
 </template>
 
 <script>
 import { mdbCarousel, mdbCarouselItem } from 'mdbvue';
 import NavigationBar from './NavigationBar'
+import Footer from './Footer'
 import StaticMap from 'vue-static-map'
 
 export default {
@@ -112,6 +114,7 @@ export default {
     mdbCarouselItem,
     NavigationBar,
     StaticMap,
+    Footer
   },
   props: {
     msg: String

@@ -2,11 +2,13 @@
   <div>
     <NavigationBar></NavigationBar>
     <h1> Bulletin </h1>
+    <Footer> </Footer>
   </div>
 </template>
 
 <script>
 import NavigationBar from './NavigationBar'
+import Footer from './Footer'
 
 export default {
   name: 'Bulletin',
@@ -14,7 +16,8 @@ export default {
     msg: String
   },
   components: {
-    NavigationBar
+    NavigationBar,
+    Footer
   }
 }
 </script>

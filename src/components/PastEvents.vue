@@ -22,12 +22,19 @@
        </template>
       </vue-bootstrap4-table>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <Footer> </Footer>
   </div>
 </template>
 
 <script>
 import NavigationBar from './NavigationBar'
 import VueBootstrap4Table from 'vue-bootstrap4-table'
+import Footer from './Footer'
 // import PastEventModal from "./PastEventModal.vue"
 
 export default {
@@ -126,7 +133,8 @@ export default {
   },
   components: {
     NavigationBar,
-    VueBootstrap4Table
+    VueBootstrap4Table,
+    Footer
   },
   methods: {
   }

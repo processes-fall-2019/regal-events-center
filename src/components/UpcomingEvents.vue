@@ -15,11 +15,18 @@
             @input="setShowDate" />
       </calendar-view>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <Footer> </Footer>
   </div>
 </template>
 
 <script>
 import NavigationBar from './NavigationBar'
+import Footer from './Footer'
 import { CalendarView, CalendarViewHeader } from 'vue-simple-calendar'
 
 export default {
@@ -35,7 +42,8 @@ export default {
   components: {
     NavigationBar,
     CalendarView,
-    CalendarViewHeader
+    CalendarViewHeader,
+    Footer
   },
   methods: {
     setShowDate(d) {

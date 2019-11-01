@@ -9,15 +9,21 @@
         :nav="true"
         :caption="true"
     ></lightbox>
+    <br>
+    <br>
+    <br>
+    <Footer> </Footer>
   </div>
 </template>
 
 <script>
 import NavigationBar from './NavigationBar'
+import Footer from './Footer'
 
  export default {
    components: {
      NavigationBar,
+     Footer
    },
    data() {
      return {
