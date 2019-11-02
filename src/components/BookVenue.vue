@@ -3,7 +3,7 @@
     <NavigationBar></NavigationBar>
     <div>
       <b-alert v-model="showDismissibleAlert" variant="success" dismissible>
-        You have successfully submitted your booking request! We will get back to you via email within 24 hrs.
+        You have successfully submitted your booking request! Please check your email to proceed with the booking process.
       </b-alert>
     </div>
     <h1> Book Venue </h1>
@@ -110,6 +110,7 @@
 <script>
 import NavigationBar from './NavigationBar'
 import Footer from './Footer'
+import AuthenticationService from '../services/AuthenticationService'
 
 export default {
     name: 'BookVenue',
@@ -136,7 +137,7 @@ export default {
       }
     },
     methods: {
-      onSubmit(evt) {
+      async onSubmit(evt) {
         evt.preventDefault()
         // alert(JSON.stringify(this.form))
         this.showDismissibleAlert = true
@@ -144,6 +145,13 @@ export default {
         this.$nextTick(() => {
           this.show = true
         })
+
+        // send confirmation email using send grid
+        await AuthenticationService.sendEmail({
+          email: this.form.email,
+          form: this.form
+        })
+
       },
       onReset(evt) {
         evt.preventDefault()
