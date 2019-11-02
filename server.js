@@ -7,6 +7,7 @@ const path = require('path')
 const port = process.env.PORT || 8080
 const app = express()
 const knex = require('./db/db')
+require('dotenv').config()
 
 app.use(morgan('combined'))
 app.use(bodyParser.json())
