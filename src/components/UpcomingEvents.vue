@@ -29,26 +29,14 @@
 import NavigationBar from './NavigationBar'
 import Footer from './Footer'
 import { CalendarView, CalendarViewHeader } from 'vue-simple-calendar'
-// import AuthenticationService from '../services/AuthenticationService'
+import AuthenticationService from '../services/AuthenticationService'
 
 export default {
   name: 'UpcomingEvents',
   data () {
     return {
       showDate: new Date(),
-      events: [
-        {
-          id: 'e1',
-          startDate: '2019-11-30',
-          endDate: '2019-11-31',
-          title: 'R.E.C Opening Ceremony'
-        },
-        {
-          startDate: '2019-11-06',
-          endDate: '2019-11-07',
-          title: 'Sample event 2'
-        }
-      ]
+      events: []
     }
   },
   props: {
@@ -59,7 +47,6 @@ export default {
     CalendarView,
     CalendarViewHeader,
     Footer,
-    // AuthenticationService
   },
   methods: {
     setShowDate(d) {
@@ -67,7 +54,30 @@ export default {
     },
   },
   async created () {
+    try {
+        const response = await AuthenticationService.getUpcomingEvents({
+          // user_id: this.userId
+        })
 
+        // eslint-disable-next-line
+        console.log('the resssssy', response)
+
+        let events = response.data.map(event => {
+          return {
+            id: event.id,
+            startDate: event.date_held,
+            endDate: event.date_held,
+            title: event.name
+          }
+        })
+
+        this.events = events
+
+        return response
+      } catch (error) {
+        // eslint-disable-next-line
+        console.log(error);
+      }
   }
 }
 </script>
