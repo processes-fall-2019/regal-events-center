@@ -7,6 +7,9 @@ export default {
   getUpcomingEvents (credentials) {
     return Api().get('getUpcomingEvents', credentials)
   },
+  sendEmail (credentials) {
+    return Api().post('sendEmail', credentials)
+  }
   // register (credentials) {
   //   return Api().post('register', credentials)
   // },
