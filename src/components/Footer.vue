@@ -39,7 +39,7 @@
           <mdb-col md="2">
             <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
             <ul class="list-unstyled">
-              <li><a href="#/admin">Admin Login</a></li>
+              <li><a href="#/adminlogin">Admin Login</a></li>
             </ul>
           </mdb-col>
         </mdb-row>
