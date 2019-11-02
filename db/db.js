@@ -1,4 +1,4 @@
-// establish connection with database using Knex ORM
+// // establish connection with database using Knex ORM
 // var knex = require('knex')({
 //   client: 'pg',
 //   connection: {
