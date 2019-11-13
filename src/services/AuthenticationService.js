@@ -9,6 +9,18 @@ export default {
   },
   sendEmail (credentials) {
     return Api().post('sendEmail', credentials)
+  },
+  login (credentials) {
+    return Api().post('login', credentials)
+  },
+  getAllEvents (credentials) {
+    return Api().get('getAllEvents', credentials)
+  },
+  getAllVisitors (credentials) {
+    return Api().get('getAllVisitors', credentials)
+  },
+  createAnEvent (credentials) {
+    return Api().post('createAnEvent', credentials)
   }
   // register (credentials) {
   //   return Api().post('register', credentials)
