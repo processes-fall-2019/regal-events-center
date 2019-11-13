@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-3 col-sm-9">
-                    <b-button @click="handleSubmitButton" size="lg" pill variant="success">Submit</b-button>
+                    <b-button @click="handleSubmitButton" size="lg" pill variant="success">Submit</b-button>&nbsp;
                     <b-button @click="handleCancelButton" size="lg" pill variant="danger">Cancel</b-button>
                   </div>
                 </div>

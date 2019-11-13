@@ -21,7 +21,7 @@
               <!-- Navbar dropdowns -->
               <!-- TODO: Fix dropdown text size -->
               <b-nav-item-dropdown text="About Us" right>
-                <b-dropdown-item class="text" href="#/grace">Grace</b-dropdown-item>
+                <b-dropdown-item class="text" href="#/grace">G.R.A.C.E</b-dropdown-item>
                 <b-dropdown-item href="#/testimonials">Testimonials</b-dropdown-item>
               </b-nav-item-dropdown>
 
