@@ -10,6 +10,7 @@ import VenueLayout from '@/components/VenueLayout'
 import BookVenue from '@/components/BookVenue'
 import Bulletin from '@/components/Bulletin'
 import AdminLogin from '@/components/AdminLogin'
+import AdminPage from '@/components/AdminPage'
 
 Vue.use(Router)
 
@@ -64,6 +65,11 @@ export default new Router({
       path: '/adminlogin',
       name: 'adminlogin',
       component: AdminLogin
+    },
+    {
+      path: '/adminpage',
+      name: 'adminpage',
+      component: AdminPage
     },
   ]
 })
