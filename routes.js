@@ -1,5 +1,33 @@
+const LoginPolicy = require('./api/policies/LoginPolicy')
+var userId
 
 module.exports = (app, knex) => {
+  app.post('/login', LoginPolicy.login, async (req, res) => {
+   const {username, password} = req.body
+   const user = await knex.select().from('admins')
+     .where({ username: username, password: password })
+     .then()
+     .catch(e => {
+       res.send({
+         error: 'Error when fetching user from database.'
+       })
+     })
+
+   if (user.length === 0) {
+     return res.send({
+       error: 'User not found.'
+     })
+   }
+
+   userId = user[0].id
+
+   res.send({
+     message: `Hello ${req.body.username}, Welcome back.`,
+     user: user
+   })
+  })
+
+
   app.get('/getPastEvents', async (req, res) => {
      await knex.select().from('events')
        .where({ event_finished: true })
@@ -15,6 +43,7 @@ module.exports = (app, knex) => {
        })
    })
 
+
    app.get('/getUpcomingEvents', async (req, res) => {
       await knex.select().from('events')
         .where({ event_finished: false })
@@ -29,6 +58,60 @@ module.exports = (app, knex) => {
           })
         })
    })
+
+
+   app.get('/getAllEvents', async (req, res) => {
+      await knex.select().from('events')
+        // .where({ event_finished: false })
+        .then(function (event) {
+          res.send(event)
+        })
+        .catch(e => {
+          res.send({
+            message: req.body,
+            error: 'Error when fetching from database.',
+            errorBody: e
+          })
+        })
+   })
+
+
+   app.get('/getAllVisitors', async (req, res) => {
+      await knex.select().from('visitors')
+        // .where({ event_finished: false })
+        .then(function (event) {
+          res.send(event)
+        })
+        .catch(e => {
+          res.send({
+            message: req.body,
+            error: 'Error when fetching from database.',
+            errorBody: e
+          })
+        })
+   })
+
+
+   app.post('/createAnEvent', async (req, res) => {
+    await knex('events')
+      .insert({
+        name: req.body.eventName,
+        date_held: req.body.dateHeld,
+        organizer: req.body.organizer,
+        comments: req.body.message
+      })
+      .then(function () {
+        res.send({
+          message: `Event created`
+        })
+      })
+      .catch(e => {
+        res.send({
+          error: 'Error creating event'
+        })
+      })
+   })
+
 
    app.post('/sendEmail', async (req, res) => {
      const sendgrid = require('@sendgrid/mail')
@@ -56,8 +139,4 @@ module.exports = (app, knex) => {
      // send the email
      sendgrid.send(message)
    })
-
-   // app.post('/createEvent', async (req, res) => {
-   //
-   // })
 }
