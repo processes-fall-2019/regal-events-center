@@ -29,7 +29,7 @@ import Footer from './Footer'
      return {
        images: [
          {
-           src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg',
+           src: require('../assets/IMG_1838.png'),
            caption: 'Image 1',
          },
          {

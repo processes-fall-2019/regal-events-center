@@ -12,11 +12,14 @@
     <!--Carousel-->
     <div class="container-fluid" >
       <mdb-carousel :interval="8000" showControls showIndicators>
-        <mdb-carousel-item img src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide" />
-        <mdb-carousel-item img src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide" />
-        <mdb-carousel-item img src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide" />
+        <mdb-carousel-item img :src="require('@/assets/IMG_0286.png')" alt="First slide" />
+        <mdb-carousel-item img :src="require('@/assets/IMG_6930.png')" alt="Second slide" />
+        <mdb-carousel-item img :src="require('@/assets/IMG_0279.png')" alt="Third slide" />
+        <mdb-carousel-item img :src="require('@/assets/IMG_0273.png')" alt="Fourth slide" />
       </mdb-carousel>
     </div>
+
+    <!-- <img src="@/assets/IMG_0279.png"/> -->
 
     <b-container>
       <b-row>
