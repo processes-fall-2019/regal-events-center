@@ -83,8 +83,8 @@
                   </b-form-checkbox-group>
                 </b-form-group>
 
-                <b-button type="submit" pill variant="success">Submit</b-button>
-                <b-button type="reset" pill variant="danger">Reset</b-button>
+                <b-button class="submitButton" type="submit" pill variant="success">Submit</b-button>
+                <b-button class="cancelButton" type="reset" pill variant="danger">Reset</b-button>
               </b-form>
             </div>
           </b-card>
@@ -146,12 +146,11 @@ export default {
           this.show = true
         })
 
-        // send confirmation email using send grid
+        // send confirmation email using send grid and add person as a visitor
         await AuthenticationService.sendEmail({
           email: this.form.email,
           form: this.form
         })
-
       },
       onReset(evt) {
         evt.preventDefault()
@@ -178,5 +177,15 @@ export default {
 .form {
   width: 800px;
   margin: auto;
+}
+
+.submitButton {
+  background-color: #1AD8D5;
+  color: #2E282A;
+}
+
+.cancelButton {
+  background-color:#E03C3C;
+  color:#2E282A;
 }
 </style>
