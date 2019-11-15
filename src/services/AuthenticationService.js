@@ -21,7 +21,10 @@ export default {
   },
   createAnEvent (credentials) {
     return Api().post('createAnEvent', credentials)
-  }
+  },
+  addVisitor (credentials) {
+    return Api().post('addVisitor', credentials)
+  },
   // register (credentials) {
   //   return Api().post('register', credentials)
   // },
