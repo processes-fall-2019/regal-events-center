@@ -23,6 +23,23 @@
 
     <b-container>
       <b-row>
+        <b-col>
+          <div class="panel-body back">
+            <b-card>
+              <b-col cols="11">
+                <h3>Our Mission</h3>
+                 <br>
+                 <p>Here at Regal Events Center it is our mission to provide </p>
+                 <p>an all-inclusive multicultural environment for advancement</p>
+                 <p>of understanding and cooperation within our community. </p>
+                 <br />
+                 <p>We strive to provide a healthy, safe, and productive environment for all our visitors and employees.</p>
+                 <br>
+                 <br>
+              </b-col>
+            </b-card>
+          </div>
+        </b-col>
         <b-col cols="6">
           <br />
           <b-card>
@@ -43,28 +60,13 @@
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-3 col-sm-9">
-                    <b-button @click="handleSubmitButton" size="lg" pill variant="success">Submit</b-button>&nbsp;
-                    <b-button @click="handleCancelButton" size="lg" pill variant="danger">Cancel</b-button>
+                    <b-button class="submitButton" @click="handleSubmitButton" size="lg" pill variant="success">Sign up</b-button>&nbsp;
+                    <b-button class="cancelButton" @click="handleCancelButton" size="lg" pill variant="danger">Cancel</b-button>
                   </div>
                 </div>
               </b-form>
             </div>
           </b-card>
-        </b-col>
-        <b-col>
-          <div class="panel-body back">
-            <b-card>
-              <b-col cols="11">
-                <h3>Our Mission</h3>
-                 <br>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                 <p>Ut enim ad minim veniam, quis nostrud exercitatio</p>
-                 <p>Ut enim ad minim veniam, quis nostrud exercitatio</p>
-              </b-col>
-            </b-card>
-          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -92,6 +94,7 @@ import { mdbCarousel, mdbCarouselItem } from 'mdbvue';
 import NavigationBar from './NavigationBar'
 import Footer from './Footer'
 import StaticMap from 'vue-static-map'
+import AuthenticationService from '../services/AuthenticationService'
 
 export default {
   name: 'Home',
@@ -125,11 +128,12 @@ export default {
     msg: String
   },
   methods: {
-    handleSubmitButton () {
-      // eslint-disable-next-line
-      console.log("Email", this.email);
-      // eslint-disable-next-line
-      console.log("Message", this.message);
+    async handleSubmitButton () {
+      // add visitor to newsletter and visitors table in db
+      await AuthenticationService.addVisitor({
+        email: this.email,
+        message: this.message
+      })
     },
     handleCancelButton () {
       this.email = ''
@@ -174,5 +178,15 @@ a {
   display:inline-block;
   margin: auto;
   text-align: center;
+}
+
+.submitButton {
+  background-color: #1AD8D5;
+  color: #2E282A;
+}
+
+.cancelButton {
+  background-color:#E03C3C;
+  color:#2E282A;
 }
 </style>
