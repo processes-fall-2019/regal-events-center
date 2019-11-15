@@ -30,34 +30,46 @@ import Footer from './Footer'
        images: [
          {
            src: require('../assets/IMG_1838.png'),
-           caption: 'Image 1',
          },
          {
-           src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg',
+           src: require('../assets/IMG_0312.png'),
+           caption: 'Main Room Layout',
          },
          {
-           src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg',
-           caption: 'Image 1',
+           src: require('../assets/IMG_0327.png'),
+           caption: 'Main Room Layout',
          },
          {
-           src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg',
+           src: require('../assets/IMG_0393.png'),
+           caption: 'Main Room Layout with chairs',
          },
          {
-           src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg',
-           caption: 'Image 1',
+           src: require('../assets/IMG_0395.png'),
+           caption: 'Main Room Layout with chairs',
          },
          {
-           src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg',
+           src: require('../assets/IMG_0534.png'),
+           caption: 'Main Room Layout with chairs and round tables',
          },
          {
-           src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg',
+           src: require('../assets/IMG_0535.png'),
+           caption: 'Main Room Layout with chairs and round tables',
          },
          {
-           src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg',
-           caption: 'Image 1',
+           src: require('../assets/IMG_0536.png'),
+           caption: 'Main Room Layout with chairs and round tables',
          },
          {
-           src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg',
+           src: require('../assets/IMG_1442.png'),
+         },
+         {
+           src: require('../assets/IMG_1836.png'),
+         },
+         {
+           src: require('../assets/IMG_2503.png'),
+         },
+         {
+           src: require('../assets/IMG_2523.png'),
          },
        ],
        visible: false,
