@@ -113,6 +113,24 @@ module.exports = (app, knex) => {
    })
 
 
+   app.post('/addVisitor', async (req, res) => {
+    await knex('visitors')
+      .insert({
+        email: req.body.email
+      })
+      .then(function () {
+        res.send({
+          message: `Visitor created`
+        })
+      })
+      .catch(e => {
+        res.send({
+          error: 'Error adding visitor to database.'
+        })
+      })
+   })
+
+
    app.post('/sendEmail', async (req, res) => {
      const sendgrid = require('@sendgrid/mail')
 
@@ -138,5 +156,22 @@ module.exports = (app, knex) => {
 
      // send the email
      sendgrid.send(message)
+
+     // add user to visitors table in db
+     await knex('visitors')
+       .insert({
+         name: req.body.form.name,
+         email: req.body.form.email
+       })
+       .then(function () {
+         res.send({
+           message: `Visitor created`
+         })
+       })
+       .catch(e => {
+         res.send({
+           error: 'Error adding visitor to database.'
+         })
+       })
    })
 }
