@@ -2,8 +2,8 @@
   <div class="hello">
     <head>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width">
+      <!-- <meta charset="utf-8"> -->
+      <!-- <meta name="viewport" content="width=device-width"> -->
     </head>
     <body class="front">
     <!--Navbar-->
