@@ -6,16 +6,15 @@
       <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
       <meta name="viewport" content="width=device-width">
     </head>
-    <body class="front">
+    <!-- <body class="front"> -->
       <!-- Navbar -->
-      <nav>
       <!-- <nav class="navbar navbar-inverse navbar-static-top noSpace back"> -->
         <div class="container-fluid">
           <b-navbar type="dark" variant="light">
             <h1> Regal Events Center </h1>
           </b-navbar>
 
-          <b-navbar type="dark" variant="dark">
+          <b-navbar toggleable="lg" type="dark" variant="dark">
             <b-navbar-nav>
               <b-nav-item href="#/">Home</b-nav-item>
               <!-- Navbar dropdowns -->
@@ -43,8 +42,7 @@
             </b-navbar-nav>
           </b-navbar>
         </div>
-      </nav>
-    </body>
+    <!-- </body> -->
   </div>
 </template>
 
