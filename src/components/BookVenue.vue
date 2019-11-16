@@ -9,14 +9,11 @@
     <h1> Book Venue </h1>
     <br>
     <br>
-    <div>
-
-    </div>
     <b-container>
       <b-row align-h="center">
         <b-col>
           <b-card>
-            <div class="form">
+            <div>
               <b-form @submit="onSubmit" @reset="onReset" v-if="show">
                 <b-form-group
                   id="input-group-1"
