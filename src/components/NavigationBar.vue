@@ -10,9 +10,12 @@
       <!-- Navbar -->
       <!-- <nav class="navbar navbar-inverse navbar-static-top noSpace back"> -->
         <div class="container-fluid">
-          <b-navbar type="dark" variant="light">
+          <!-- <b-navbar type="dark" variant="light">
             <h1> Regal Events Center </h1>
-          </b-navbar>
+            <img src="@/assets/rec-logo.png"/>
+          </b-navbar> -->
+          <img class="center" src="@/assets/rec-logo.png"/>
+
 
           <b-navbar toggleable="lg" type="dark" variant="dark">
             <b-navbar-nav>
@@ -84,5 +87,12 @@ a {
 
 .color {
   background: Orange;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 25%; */
 }
 </style>
