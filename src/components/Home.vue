@@ -16,6 +16,7 @@
         <mdb-carousel-item img :src="require('@/assets/IMG_6930.png')" alt="Second slide" />
         <mdb-carousel-item img :src="require('@/assets/IMG_0279.png')" alt="Third slide" />
         <mdb-carousel-item img :src="require('@/assets/IMG_0273.png')" alt="Fourth slide" />
+        <!-- <mdb-carousel-item img :src="require('@/assets/IMG_0999.png')" alt="5th slide" /> -->
       </mdb-carousel>
     </div>
 
@@ -75,9 +76,9 @@
       <p> 177 Anchor Rd </p>
       <p> Casselberry, FL, 32707</p>
       <br>
-      <static-map :google-api-key="apiKey" :format="format" :markers="markers" :zoom="zoom" :center="center" :size="size" :type="type" :language="language"></static-map>
+      <!-- <static-map :google-api-key="apiKey" :format="format" :markers="markers" :zoom="zoom" :center="center" :size="size" :type="type" :language="language"></static-map> -->
+      <img class="image" src="@/assets/regal-map.png"/>
       <br>
-      <!-- <img src="@/assets/regal-map.png"/> -->
       <br>
       <div>
         <b-button href="https://www.google.com/maps/place/Casselberry,+FL+32707/@28.6679392,-81.3472437,17z/data=!3m1!4b1!4m5!3m4!1s0x88e771fc709ad4d7:0x3283e0b5cba6fd8e!8m2!3d28.667934!4d-81.345055" size="lg" pill variant="primary" class="submitButton">Get Directions</b-button>
@@ -94,7 +95,7 @@
 import { mdbCarousel, mdbCarouselItem } from 'mdbvue';
 import NavigationBar from './NavigationBar'
 import Footer from './Footer'
-import StaticMap from 'vue-static-map'
+// import StaticMap from 'vue-static-map'
 import AuthenticationService from '../services/AuthenticationService'
 
 export default {
@@ -122,7 +123,7 @@ export default {
     mdbCarousel,
     mdbCarouselItem,
     NavigationBar,
-    StaticMap,
+    // StaticMap,
     Footer
   },
   props: {
@@ -189,5 +190,11 @@ a {
 .cancelButton {
   background-color:#E03C3C;
   color:#2E282A;
+}
+
+.image {
+  width: 50%;
+  height: 50%;
+  text-align: center;
 }
 </style>
