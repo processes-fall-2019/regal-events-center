@@ -7,10 +7,15 @@
       </b-alert>
     </div>
     <h1> Book Venue </h1>
+    <br>
+    <br>
+    <div>
+
+    </div>
     <b-container>
-      <b-row align-h="center" class="mt-5">
-        <b-col cols="11">
-          <b-card class="p-3">
+      <b-row align-h="center">
+        <b-col>
+          <b-card>
             <div class="form">
               <b-form @submit="onSubmit" @reset="onReset" v-if="show">
                 <b-form-group
