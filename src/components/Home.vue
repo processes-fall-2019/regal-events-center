@@ -41,7 +41,7 @@
             </b-card>
           </div>
         </b-col>
-        <b-col cols="6">
+        <b-col>
           <br />
           <b-card class="dark">
             <div class="panel-heading mid txt"> Want to learn more? Sign up for our newsletters. </div>
