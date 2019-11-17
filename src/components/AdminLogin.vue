@@ -4,7 +4,7 @@
     <br />
     <br />
     <!-- here -->
-    <b-container class="size">
+    <b-container>
       <form class="border border-dark p-5">
         <p class="h1 mb-4">Admin login</p>
         <br />
