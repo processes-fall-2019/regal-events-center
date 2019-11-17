@@ -85,10 +85,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .calendar {
-  width: 1100px;
+  width: 80%;
   height: 650px;
-  position:relative;
+  /* position:relative; */
   display:inline-block;
-  top:50%;
+  /* top:50%; */
 }
 </style>
