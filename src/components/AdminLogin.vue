@@ -102,6 +102,7 @@ export default {
 <style scoped>
 .size {
   width: 500px;
+  margin: auto;
 }
 .error {
   color: red;
