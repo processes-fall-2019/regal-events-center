@@ -96,7 +96,4 @@ a {
   /* width: 25%; */
 }
 
-.pos {
-  /* position: sticky; */
-}
 </style>

@@ -15,7 +15,7 @@
           </mdb-col>
           <hr class="clearfix w-100 d-md-none" />
           <mdb-col md="2">
-            <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
+            <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Nav Links</h5>
             <ul class="list-unstyled">
               <li><a href="#/">Home</a></li>
               <li><a href="#/grace">Grace</a></li>
@@ -26,7 +26,7 @@
           </mdb-col>
           <hr class="clearfix w-100 d-md-none" />
           <mdb-col md="2">
-            <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
+            <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Nav Links</h5>
             <ul class="list-unstyled">
               <li><a href="#/upcomingevents">Upcoming Events</a></li>
               <li><a href="#/pastevents">Past Events</a></li>
@@ -36,7 +36,7 @@
           </mdb-col>
           <hr class="clearfix w-100 d-md-none" />
           <mdb-col md="2">
-            <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
+            <h5 class="text-uppercase mb-4 mt-3 font-weight-bold"></h5>
             <ul class="list-unstyled">
               <li><a href="#/adminlogin">Admin Login</a></li>
             </ul>
