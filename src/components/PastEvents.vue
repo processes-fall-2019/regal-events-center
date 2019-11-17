@@ -22,6 +22,7 @@
        </template>
       </vue-bootstrap4-table>
     </div>
+    <!-- <ViewEventDetailsModal></ViewEventDetailsModal> -->
     <br />
     <br />
     <br />
@@ -36,7 +37,7 @@ import NavigationBar from './NavigationBar'
 import VueBootstrap4Table from 'vue-bootstrap4-table'
 import Footer from './Footer'
 import AuthenticationService from '../services/AuthenticationService'
-// import PastEventModal from "./PastEventModal.vue"
+// import ViewEventDetailsModal from '../modals/ViewEventDetailsModal'
 
 export default {
   name: 'PastEvents',
@@ -101,7 +102,8 @@ export default {
   components: {
     NavigationBar,
     VueBootstrap4Table,
-    Footer
+    Footer,
+    // ViewEventDetailsModal
   },
   methods: {
   },
