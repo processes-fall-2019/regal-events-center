@@ -95,4 +95,8 @@ a {
   margin-right: auto;
   /* width: 25%; */
 }
+
+.pos {
+  /* position: sticky; */
+}
 </style>

@@ -11,8 +11,7 @@
         <mdb-row>
           <mdb-col md="6">
             <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Footer Content</h5>
-            <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit
-              amet, consectetur adipisicing elit.</p>
+            <p> Thank you for choosing Regal Events Center. Have a wonderful day and please do not hesitate to contact or visit us in person with any questions/concerns.</p>
           </mdb-col>
           <hr class="clearfix w-100 d-md-none" />
           <mdb-col md="2">

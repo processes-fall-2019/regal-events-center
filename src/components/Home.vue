@@ -5,7 +5,7 @@
       <!-- <meta charset="utf-8"> -->
       <!-- <meta name="viewport" content="width=device-width"> -->
     </head>
-    <body class="front">
+    <!-- <body class="front"> -->
     <!--Navbar-->
     <NavigationBar></NavigationBar>
 
@@ -26,15 +26,15 @@
       <b-row>
         <b-col>
           <div class="panel-body back">
-            <b-card>
-              <b-col cols="11">
-                <h3>Our Mission</h3>
+            <b-card class="dark">
+              <div class="panel-heading mid txt"> Our Mission </div>
+              <b-col>
                  <br>
-                 <p>Here at Regal Events Center it is our mission to provide </p>
-                 <p>an all-inclusive multicultural environment for advancement</p>
-                 <p>of understanding and cooperation within our community. </p>
+                 <p class="mission-txt">Here at Regal Events Center it is our mission to provide </p>
+                 <p class="mission-txt">an all-inclusive multicultural environment for advancement</p>
+                 <p class="mission-txt">of understanding and cooperation within our community. </p>
                  <br />
-                 <p>We strive to provide a healthy, safe, and productive environment for all our visitors and employees.</p>
+                 <p class="mission-txt">We strive to provide a healthy, safe, and productive environment for all our visitors and employees.</p>
                  <br>
                  <br>
               </b-col>
@@ -43,8 +43,8 @@
         </b-col>
         <b-col cols="6">
           <br />
-          <b-card>
-            <div class="panel-heading mid"> Want to learn more? Sign up for our newsletters. </div>
+          <b-card class="dark">
+            <div class="panel-heading mid txt"> Want to learn more? Sign up for our newsletters. </div>
             <div class="panel-body back">
               <b-form class="form-horizontal">
                 <div class="form-group">
@@ -86,7 +86,7 @@
       <br>
       <br>
     </div>
-    </body>
+    <!-- </body> -->
     <Footer> </Footer>
   </div>
 </template>
@@ -183,18 +183,34 @@ a {
 }
 
 .submitButton {
-  background-color: #1AD8D5;
-  color: #2E282A;
+  color: black;
 }
 
 .cancelButton {
-  background-color:#E03C3C;
-  color:#2E282A;
+  color: black;
 }
 
 .image {
-  width: 50%;
-  height: 50%;
+  width: 58%;
+  height: 58%;
   text-align: center;
+}
+
+.dark {
+  background-color:#2E282A;
+  color:#FFFAF2;
+}
+
+.mid {
+  background-color:#FFB775;
+  color:#2E282A;
+}
+
+.txt {
+  font-size: 20px;
+}
+
+.mission-txt {
+  font-size: 17.5px;
 }
 </style>
