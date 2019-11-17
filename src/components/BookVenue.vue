@@ -12,7 +12,8 @@
     <b-container>
       <b-row align-h="center">
         <b-col>
-          <b-card class="shadow-lg p-3 mb-5 bg-white rounded">
+          <!-- <b-card class="shadow-lg p-3 mb-5 bg-white rounded"> -->
+          <b-card class="dark">
             <div>
               <b-form @submit="onSubmit" @reset="onReset" v-if="show">
                 <b-form-group
@@ -185,5 +186,10 @@ export default {
 
 .cancelButton {
   color: black;
+}
+
+.dark {
+  background-color:#2E282A;
+  color:#FFFAF2;
 }
 </style>
