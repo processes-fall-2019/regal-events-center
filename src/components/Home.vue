@@ -11,8 +11,7 @@
       <mdb-carousel :interval="8000" showControls showIndicators>
         <mdb-carousel-item img :src="require('@/assets/IMG_0286.png')" alt="First slide" />
         <mdb-carousel-item img :src="require('@/assets/IMG_6930.png')" alt="Second slide" />
-        <mdb-carousel-item img :src="require('@/assets/IMG_0279.png')" alt="Third slide" />
-        <mdb-carousel-item img :src="require('@/assets/IMG_0273.png')" alt="Fourth slide" />
+        <mdb-carousel-item img :src="require('@/assets/IMG_0273.png')" alt="Third slide" />
       </mdb-carousel>
     </div>
     <br />
