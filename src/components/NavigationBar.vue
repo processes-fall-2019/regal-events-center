@@ -90,11 +90,16 @@ a {
   background: Orange;
 }
 
-.center {
+/* .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 28%;
+  width:50%;
+} */
+
+.center {
+  width:500px; /* you can use % */
+  height: auto;
 }
 
 </style>
