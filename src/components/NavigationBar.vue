@@ -14,7 +14,7 @@
             <h1> Regal Events Center </h1>
             <img src="@/assets/rec-logo.png"/>
           </b-navbar> -->
-          <img class="center" src="@/assets/rec-logo.png"/>
+          <img class="center" src="@/assets/logooo.png"/>
 
 
           <b-navbar toggleable="lg" type="dark" variant="dark">
@@ -94,7 +94,7 @@ a {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 25%; */
+  width: 28%;
 }
 
 </style>
