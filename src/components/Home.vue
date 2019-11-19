@@ -46,11 +46,17 @@
           <b-card class="dark">
             <div class="panel-heading mid txt"> Want to learn more? Sign up for our newsletters. </div>
             <div class="panel-body back">
-              <b-form class="form-horizontal">
+              <b-form v-if="show" @submit="handleSubmitButton" class="form-horizontal">
                 <div class="form-group">
                   <label class="control-label col-sm-3" for="email">Email:</label>
                   <div class="col-sm-9">
-                    <input class="form-control" id="email" name="email" v-model="email" type="email"  placeholder="Enter email">
+                    <!-- <input class="form-control" id="email" name="email" v-model="email" type="email"  placeholder="Enter email"> -->
+                    <b-form-input
+                      v-model="email"
+                      type="email"
+                      required
+                      placeholder="Enter your email"
+                    ></b-form-input>
                   </div>
                 </div>
                 <div class="form-group">
@@ -61,7 +67,7 @@
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-3 col-sm-9">
-                    <b-button class="submitButton" @click="handleSubmitButton" size="lg" pill variant="success">Sign up</b-button>&nbsp;
+                    <b-button class="submitButton" type="submit" size="lg" pill variant="success">Sign up</b-button>&nbsp;
                     <b-button class="cancelButton" @click="handleCancelButton" size="lg" pill variant="danger">Cancel</b-button>
                   </div>
                 </div>
@@ -105,6 +111,7 @@ export default {
       email: '',
       message: '',
       error: null,
+      show: true,
       apiKey: 'AIzaSyDtLtZiko5ZN-t4BZbYSfTiXJwBlD9uL9I',
       zoom: 13,
       center: 'Casselberry,FL',
@@ -130,7 +137,13 @@ export default {
     msg: String
   },
   methods: {
-    async handleSubmitButton () {
+    async handleSubmitButton (evt) {
+      evt.preventDefault()
+      this.show = false
+      this.$nextTick(() => {
+        this.show = true
+      })
+
       // add visitor to newsletter and visitors table in db
       await AuthenticationService.addVisitor({
         email: this.email,
