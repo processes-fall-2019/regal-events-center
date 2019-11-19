@@ -12,7 +12,6 @@
     <b-container>
       <b-row align-h="center">
         <b-col>
-          <!-- <b-card class="shadow-lg p-3 mb-5 bg-white rounded"> -->
           <b-card class="dark">
             <div>
               <b-form @submit="onSubmit" @reset="onReset" v-if="show">
@@ -45,7 +44,7 @@
                     v-model="form.number"
                     type="number"
                     required
-                    placeholder="Enter phone number"
+                    placeholder="Enter a valid 10 digit phone number with no special characters"
                   ></b-form-input>
 
                 </b-form-group>
@@ -75,6 +74,26 @@
                     type="date"
                     required
                     placeholder="Enter desired booking date (DD/MM/YYYY) or select date from calendar below."
+                  ></b-form-input>
+                </b-form-group>
+
+                <b-form-group id="input-group-6" label="Desired Start Time:" label-for="input-6">
+                  <b-form-input
+                    id="input-6"
+                    v-model="form.start_time"
+                    type="time"
+                    required
+                    placeholder="Enter desired start time of your event"
+                  ></b-form-input>
+                </b-form-group>
+
+                <b-form-group id="input-group-7" label="Desired End Time:" label-for="input-7">
+                  <b-form-input
+                    id="input-7"
+                    v-model="form.end_time"
+                    type="time"
+                    required
+                    placeholder="Enter desired end time of your event"
                   ></b-form-input>
                   <br />
                 </b-form-group>
@@ -130,6 +149,8 @@ export default {
           name: '',
           layout: null,
           date: '',
+          start_time: '',
+          end_time: '',
           checked: [],
         },
         showDismissibleAlert: false,
