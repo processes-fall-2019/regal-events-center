@@ -14,8 +14,7 @@
             <h1> Regal Events Center </h1>
             <img src="@/assets/rec-logo.png"/>
           </b-navbar> -->
-          <img class="center" src="@/assets/logooo.png"/>
-
+          <img class="img-fluid center" src="@/assets/logooo.png"/>
 
           <b-navbar toggleable="lg" type="dark" variant="dark">
             <b-navbar-nav>
@@ -98,7 +97,7 @@ a {
 } */
 
 .center {
-  width:37%; /* you can use % */
+  width:40%; /* you can use % */
   height: auto;
 }
 
