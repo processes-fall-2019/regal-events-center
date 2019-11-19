@@ -2,10 +2,7 @@
   <div class="hello">
     <head>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-      <!-- <meta charset="utf-8"> -->
-      <!-- <meta name="viewport" content="width=device-width"> -->
     </head>
-    <!-- <body class="front"> -->
     <!--Navbar-->
     <NavigationBar></NavigationBar>
 
@@ -16,12 +13,10 @@
         <mdb-carousel-item img :src="require('@/assets/IMG_6930.png')" alt="Second slide" />
         <mdb-carousel-item img :src="require('@/assets/IMG_0279.png')" alt="Third slide" />
         <mdb-carousel-item img :src="require('@/assets/IMG_0273.png')" alt="Fourth slide" />
-        <!-- <mdb-carousel-item img :src="require('@/assets/IMG_0999.png')" alt="5th slide" /> -->
       </mdb-carousel>
     </div>
-
-    <!-- <img src="@/assets/IMG_0279.png"/> -->
-
+    <br />
+    <br />
     <b-container>
       <b-row>
         <b-col>
@@ -50,7 +45,6 @@
                 <div class="form-group">
                   <label class="control-label col-sm-3" for="email">Email:</label>
                   <div class="col-sm-9">
-                    <!-- <input class="form-control" id="email" name="email" v-model="email" type="email"  placeholder="Enter email"> -->
                     <b-form-input
                       v-model="email"
                       type="email"
@@ -77,22 +71,7 @@
         </b-col>
       </b-row>
     </b-container>
-    <div class="container-fluid">
-      <h3> Regal Events Center</h3>
-      <p> 177 Anchor Rd </p>
-      <p> Casselberry, FL, 32707</p>
-      <br>
-      <!-- <static-map :google-api-key="apiKey" :format="format" :markers="markers" :zoom="zoom" :center="center" :size="size" :type="type" :language="language"></static-map> -->
-      <img class="image" src="@/assets/regal-map.png"/>
-      <br>
-      <br>
-      <div>
-        <b-button href="https://www.google.com/maps/place/Casselberry,+FL+32707/@28.6679392,-81.3472437,17z/data=!3m1!4b1!4m5!3m4!1s0x88e771fc709ad4d7:0x3283e0b5cba6fd8e!8m2!3d28.667934!4d-81.345055" size="lg" pill variant="primary" class="submitButton">Get Directions</b-button>
-      </div>
-      <br>
-      <br>
-    </div>
-    <!-- </body> -->
+    <br />
     <Footer> </Footer>
   </div>
 </template>
@@ -101,7 +80,6 @@
 import { mdbCarousel, mdbCarouselItem } from 'mdbvue';
 import NavigationBar from './NavigationBar'
 import Footer from './Footer'
-// import StaticMap from 'vue-static-map'
 import AuthenticationService from '../services/AuthenticationService'
 
 export default {
@@ -130,7 +108,6 @@ export default {
     mdbCarousel,
     mdbCarouselItem,
     NavigationBar,
-    // StaticMap,
     Footer
   },
   props: {
@@ -201,12 +178,6 @@ a {
 
 .cancelButton {
   color: black;
-}
-
-.image {
-  width: 58%;
-  height: 58%;
-  text-align: center;
 }
 
 .dark {
