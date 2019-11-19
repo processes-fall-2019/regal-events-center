@@ -98,7 +98,7 @@ a {
 } */
 
 .center {
-  width:500px; /* you can use % */
+  width:37%; /* you can use % */
   height: auto;
 }
 
