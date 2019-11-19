@@ -145,13 +145,15 @@ module.exports = (app, knex) => {
           <p>
             Hello ${req.body.form.name}, thank you for your interest in Regal Events Center. You have requested to book a venue with the information below:
           </p>
-          <p>
-            Please allow 24 hours for our team to get back to you regarding your reservation.
-          </p>
           <ul>
             <li> Desired date of reservation: ${req.body.form.date} </li>
+            <li> Desired start time for event: ${req.body.form.start_time} </li>
+            <li> Desired end time for event: ${req.body.form.end_time} </li>
             <li> Layout: ${req.body.form.layout} </li>
-          </ul>`
+          </ul>
+          <p>
+            Please allow 24 hours for our team to get back to you regarding your reservation.
+          </p>`
      }
 
      // send the email
