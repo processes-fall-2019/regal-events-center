@@ -34,7 +34,17 @@
           <h4 class="my-4">Organizer: {{ this.organizer }}</h4>
           <br />
           <br />
-          <h4 class="my-4">Space for pictures and info</h4>
+          <!-- <div class="img"> -->
+            <!-- <img src="@/assets/logo.png"/>
+            <img src="@/assets/logo.png"/> -->
+            <lightbox
+                :images="images"
+                title="Event Gallery"
+                :loop="true"
+                :nav="true"
+                :caption="true"
+            ></lightbox>
+          <!-- </div> -->
         </mdb-modal-body>
         <mdb-modal-footer>
           <mdb-btn color="danger" @click.native="modal = false">Close</mdb-btn>
@@ -63,6 +73,20 @@ export default {
   name: 'PastEvents',
   data () {
     return {
+      images: [
+        {
+          src: require('../assets/IMG_1838.png'),
+        },
+        {
+          src: require('../assets/IMG_0312.png'),
+        },
+        {
+          src: require('../assets/IMG_0327.png'),
+        },
+        {
+          src: require('../assets/IMG_0327.png'),
+        },
+      ],
       test: 1,
       eventName: '',
       dateHeld: '',
@@ -166,5 +190,10 @@ export default {
   position:relative;
   display:inline-block;
   top:50%;
+}
+
+.img {
+  height: 50%;
+  width: 50%;
 }
 </style>
