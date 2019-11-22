@@ -17,6 +17,8 @@
             <ul class="list-unstyled">
               <div class="center">
                 <h3> Regal Events Center</h3>
+                <br>
+                <p> 123-456-7890 </p>
                 <p> 177 Anchor Rd </p>
                 <p> Casselberry, FL, 32707</p>
                 <br />
