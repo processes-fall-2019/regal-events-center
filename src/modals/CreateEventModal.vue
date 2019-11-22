@@ -21,7 +21,9 @@
       </mdb-modal-header>
       <mdb-modal-body>
         <input type="" class="form-control mb-4" placeholder="Event name" v-model="eventName">
-        <input type="" class="form-control mb-4" placeholder="Date held" v-model="dateHeld">
+        <input type="date" class="form-control mb-4" placeholder="Date held" v-model="dateHeld">
+        <input type="time" class="form-control mb-4" placeholder="Start time" v-model="startTime">
+        <input type="time" class="form-control mb-4" placeholder="End time" v-model="endTime">
         <input type="" class="form-control mb-4" placeholder="Organizer" v-model="organizer">
         <textarea type="input" class="form-control" placeholder="Enter comments" v-model="message"> </textarea>
       </mdb-modal-body>
@@ -51,6 +53,8 @@ export default {
       modalName: 'events-modal',
       eventName: '',
       dateHeld: '',
+      startTime: '',
+      endTime: '',
       organizer: '',
       message: '',
       modal: false
@@ -66,6 +70,8 @@ export default {
       await AuthenticationService.createAnEvent({
         eventName: this.eventName,
         dateHeld: this.dateHeld,
+        startTime: this.startTime,
+        endTime: this.endTime,
         organizer: this.organizer,
         message: this.message
       })
