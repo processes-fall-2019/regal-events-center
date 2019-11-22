@@ -19,15 +19,35 @@
            <i class="fa fa-sort"></i>
        </template>
        <!-- <template slot="open_modal" slot-scope="props"> -->
-       <template slot="open_modal">
+       <template slot="open_modal" slot-scope="props">
          <!-- <button class="btn btn-primary" @click="openVisitorModal(props.row)">View Details</button> -->
-         <button class="btn btn-primary">View Details</button>
+         <button @click="openModal(props.row)" class="btn btn-primary">View Details</button>
+       </template>
+       <template slot="delete_event" slot-scope="props">
+         <!-- <button class="btn btn-primary" @click="openVisitorModal(props.row)">View Details</button> -->
+         <button @click="deleteEvent(props.row)" class="btn btn-danger">Delete</button>
        </template>
       </vue-bootstrap4-table>
     </div>
-    <!-- <b-button @click="createEvent" pill variant="success">Create an Event</b-button> -->
+
+    <modal
+    :name="modalName"
+    height="auto"
+    width="1000px"
+    :scrollable="true"
+    @before-open="beforeOpen">
+
+    <h4 class="my-4">&nbsp; Event name: {{ this.eventName }}</h4>
+    <h4 class="my-4">&nbsp; Date held: {{ this.dateHeld }}</h4>
+    <h4 class="my-4">&nbsp; Organizer: {{ this.organizer }}</h4>
+    <h4 class="my-4">&nbsp; Start time: {{ this.startTime }}</h4>
+    <h4 class="my-4">&nbsp; End time: {{ this.endTime }}</h4>
+    <!-- <h4 class="my-4">Event finished? {{ this.event_finished }}</h4> -->
+
+    </modal>
 
     <CreateEventModal></CreateEventModal>
+
     <br />
     <br />
     <hr />
@@ -46,12 +66,27 @@
            <i class="fa fa-sort"></i>
        </template>
        <!-- <template slot="open_modal" slot-scope="props"> -->
-       <template slot="open_modal">
+       <template slot="open_modal" slot-scope="props">
          <!-- <button class="btn btn-primary" @click="openVisitorModal(props.row)">View Details</button> -->
-         <button class="btn btn-primary">View Details</button>
+         <button @click="openVisitorModal(props.row)" class="btn btn-primary">View Details</button>
        </template>
       </vue-bootstrap4-table>
     </div>
+
+    <modal
+    :name="visitorModal"
+    height="auto"
+    width="1000px"
+    :scrollable="true"
+    @before-open="visitorBeforeOpen">
+
+    <h4 class="my-4">&nbsp; Visitor name: {{ this.visitorName }}</h4>
+    <h4 class="my-4">&nbsp; Visitor email: {{ this.visitorEmail }}</h4>
+    <h4 class="my-4">&nbsp; Event attended: {{ this.eventAttended }}</h4>
+    <!-- <h4 class="my-4">Blacklisted? {{ this.event_finished }}</h4> -->
+
+    </modal>
+
     <br />
     <br />
     <br />
@@ -71,6 +106,16 @@ export default {
   name: 'AdminPage',
   data () {
     return {
+      visitorName: '',
+      visitorEmail: '',
+      eventAttended: '',
+      eventName: '',
+      dateHeld: '',
+      organizer: '',
+      startTime: '',
+      endTime: '',
+      modalName: 'events-modal',
+      visitorModal: 'visitors-modal',
       rows: [],
       visitorsRows: [],
       columns: [{
@@ -103,6 +148,10 @@ export default {
       {
         label: "",
         name: "open_modal",
+        sort: false,
+      },{
+        label: "",
+        name: "delete_event",
         sort: false,
       }],
       visitorsCols: [{
@@ -161,8 +210,27 @@ export default {
     CreateEventModal
   },
   methods: {
-    createEvent () {
-      this.$modal.show('events-modal')
+    openModal (row) {
+      this.$modal.show('events-modal', { row })
+    },
+    beforeOpen (event) {
+      this.eventName = event.params.row.name
+      this.dateHeld = event.params.row.date_held
+      this.organizer = event.params.row.organizer
+      this.startTime = event.params.row.start_time
+      this.endTime = event.params.row.end_time
+    },
+    openVisitorModal (row) {
+      this.$modal.show('visitors-modal', { row })
+    },
+    visitorBeforeOpen (event) {
+      this.visitorName = event.params.row.name
+      this.visitorEmail = event.params.row.email
+      this.organizer = event.params.row.event_id
+    },
+    async deleteEvent (row) {
+      // eslint-disable-next-line
+      console.log(row);
     }
   },
   async created () {
