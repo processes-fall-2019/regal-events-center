@@ -7,7 +7,7 @@
     <NavigationBar></NavigationBar>
 
     <!--Carousel-->
-    <div class="container-fluid" >
+    <div class="container-fluid img-padding" >
       <mdb-carousel :interval="8000" showControls showIndicators>
         <mdb-carousel-item img :src="require('@/assets/IMG_0286.png')" alt="First slide" />
         <mdb-carousel-item img :src="require('@/assets/IMG_6930.png')" alt="Second slide" />
@@ -173,6 +173,10 @@ a {
 
 .submitButton {
   color: black;
+}
+
+.img-padding {
+  /* padding-top: 70px; */
 }
 
 .cancelButton {

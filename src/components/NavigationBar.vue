@@ -14,9 +14,11 @@
             <h1> Regal Events Center </h1>
             <img src="@/assets/rec-logo.png"/>
           </b-navbar> -->
-          <img class="img-fluid center" src="@/assets/logooo.png"/>
+          <div>
+            <img class="img-fluid center" src="@/assets/logooo.png"/>
+          </div>
 
-          <b-navbar toggleable="lg" type="dark" variant="dark">
+          <b-navbar class="pos" toggleable="lg" type="dark" variant="dark">
             <b-navbar-nav>
               <b-nav-item href="#/">Home</b-nav-item>
               <!-- Navbar dropdowns -->
@@ -100,5 +102,12 @@ a {
   width:500px; /* you can use % */
   height: auto;
 }
+
+/* .pos {
+  position: fixed;
+  top: 0;
+  z-index:2;
+  width: 98%;
+} */
 
 </style>
