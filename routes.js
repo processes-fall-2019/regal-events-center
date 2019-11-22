@@ -97,6 +97,8 @@ module.exports = (app, knex) => {
       .insert({
         name: req.body.eventName,
         date_held: req.body.dateHeld,
+        start_time: req.body.startTime,
+        end_time: req.body.endTime,
         organizer: req.body.organizer,
         comments: req.body.message
       })
