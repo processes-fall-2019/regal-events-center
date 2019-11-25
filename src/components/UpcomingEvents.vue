@@ -1,6 +1,11 @@
 <template>
   <div class="app">
     <NavigationBar></NavigationBar>
+    <div>
+      <b-alert v-model="showDismissibleAlert" variant="success" dismissible>
+        You have successfully signed up to attend an event! Please check your email for a confirmation email.
+      </b-alert>
+    </div>
     <h1> Upcoming Events </h1>
     <br>
 
@@ -33,8 +38,81 @@
         </mdb-modal-body>
         <mdb-modal-footer>
           <mdb-btn color="danger" @click.native="modal = false">Close</mdb-btn>
-          <mdb-btn @click="register" color="success">Attend event</mdb-btn>
+          <mdb-btn @click="attendEvent" color="success">Attend event</mdb-btn>
         </mdb-modal-footer>
+      </mdb-modal>
+    </div>
+
+    <div>
+      <mdb-modal :show="modal2" @close="modal2 = false">
+        <mdb-modal-header>
+          <mdb-modal-title>Input your information to attend this event</mdb-modal-title>
+        </mdb-modal-header>
+        <mdb-modal-body>
+          <!-- <input class="my-4"></input> -->
+          <h5> Attending Event:  {{ this.eventName }} </h5>
+
+          <!-- <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+            <b-form-input
+              class="my-4"
+              v-model="fullName"
+              required
+              placeholder="Enter your full name"
+            ></b-form-input>
+            <b-form-input
+              class="my-4"
+              v-model="email"
+              type="email"
+              required
+              placeholder="Enter your email"
+            ></b-form-input>
+            <b-form-input
+              class="my-4"
+              v-model="number"
+              type="number"
+              placeholder="Enter your phone number (optional)"
+            ></b-form-input>
+          </b-form> -->
+
+          <b-form v-if="show" @submit="onSubmit" class="form-horizontal">
+            <div>
+              <div>
+                <b-form-input
+                  class="my-4"
+                  v-model="fullName"
+                  required
+                  placeholder="Enter your full name"
+                ></b-form-input>
+
+                <b-form-input
+                  class="my-4"
+                  v-model="email"
+                  type="email"
+                  required
+                  placeholder="Enter your email"
+                ></b-form-input>
+
+                <b-form-input
+                  class="my-4"
+                  v-model="number"
+                  type="number"
+                  placeholder="Enter your phone number (optional)"
+                ></b-form-input>
+              </div>
+            </div>
+            <div>
+              <div>
+                <b-button class="cancelButton" @click="onReset" size="lg" variant="danger">Cancel</b-button>
+                <b-button class="submitButton" type="submit" size="lg" variant="success">Attend</b-button>&nbsp;
+              </div>
+            </div>
+          </b-form>
+
+        </mdb-modal-body>
+        <!-- <mdb-modal-footer>
+          <mdb-btn color="danger" @click.native="modal2 = false">Close</mdb-btn>
+          <b-button class="submitButton" type="submit" @click="register" color="success">Attend</b-button>
+        </mdb-modal-footer> -->
       </mdb-modal>
     </div>
     <br />
@@ -62,12 +140,18 @@ export default {
       showDate: new Date(),
       events: [],
       modal: false,
+      modal2: false,
       eventName: '',
       dateHeld: '',
       organizer: '',
       comments: '',
       startTime: '',
-      endTime: ''
+      endTime: '',
+      email: '',
+      fullName: '',
+      number: '',
+      show: true,
+      showDismissibleAlert: false,
     }
   },
   props: {
@@ -105,8 +189,32 @@ export default {
       this.startTime = event.originalEvent.startTime
       this.endTime = event.originalEvent.endTime
     },
-    register () {
+    attendEvent () {
+      this.modal2 = true
+      this.modal = false
+    },
+    async onSubmit (evt) {
+      evt.preventDefault()
+      this.showDismissibleAlert = true
+      this.show = false
+      this.$nextTick(() => {
+        this.show = true
+      })
 
+      this.modal2 = false
+
+      // await AuthenticationService.addVisitor({
+      //   email: this.email,
+      //   message: this.message
+      // })
+
+    },
+    onReset () {
+      this.email = ''
+      this.fullName = ''
+      this.number = ''
+      this.showDismissibleAlert = false
+      this.modal2 = false
     }
   },
   async created () {
