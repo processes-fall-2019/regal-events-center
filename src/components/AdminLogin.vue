@@ -5,7 +5,7 @@
     <br />
     <!-- here -->
     <b-container>
-      <form class="border border-dark p-5">
+      <form class="login border border-dark p-5">
         <p class="h1 mb-4">Admin login</p>
         <br />
         <!-- Email -->
@@ -22,6 +22,7 @@
                     <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
                 </div>
             </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div>
                 <!-- Forgot password -->
                 <a href="">Forgot password?</a>
@@ -106,5 +107,17 @@ export default {
 }
 .error {
   color: red;
+}
+.login {
+  /* width: 50%; */
+  /* height: 650px; */
+  /* position:relative; */
+  display:inline-block;
+  /* top:50%; */
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	/* color: #2c3e50; */
+	margin-left: auto;
+	margin-right: auto;
+  background-color: white;
 }
 </style>
