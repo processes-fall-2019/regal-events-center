@@ -107,6 +107,7 @@ export default {
   name: 'AdminPage',
   data () {
     return {
+      componentKey: 0,
       visitorName: '',
       visitorEmail: '',
       eventAttended: '',
@@ -242,6 +243,8 @@ export default {
       } else {
         return false
       }
+
+      location.reload()
     }
   },
   async created () {
