@@ -25,6 +25,9 @@ export default {
   addVisitor (credentials) {
     return Api().post('addVisitor', credentials)
   },
+  sendConfirmationEmail (credentials) {
+    return Api().post('sendConfirmationEmail', credentials)
+  },
   // register (credentials) {
   //   return Api().post('register', credentials)
   // },
