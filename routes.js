@@ -178,4 +178,46 @@ module.exports = (app, knex) => {
          })
        })
    })
+
+   app.post('/sendConfirmationEmail', async (req, res) => {
+     const sendgrid = require('@sendgrid/mail')
+
+     sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
+
+     const message = {
+       to: req.body.email,
+       from: 'admin@regaleventscenter.com',
+       subject: 'Your Regal Events Center event attendance confirmation',
+       text: 'here',
+       html: `
+          <p>
+            Hello ${req.body.name}, thank you for your interest in Regal Events Center. You are confirmed to attend an event with the information below:
+          </p>
+          <ul>
+            <li> Event name: ${req.body.eventName}</li>
+            <li> Event date: ${req.body.eventDate}</li>
+            <li> Number of people attending: ${req.body.numPeople}</li>
+          </ul>`
+     }
+
+     // send the email
+     sendgrid.send(message)
+
+     // add user to visitors table in db
+     await knex('visitors')
+       .insert({
+         name: req.body.name,
+         email: req.body.email
+       })
+       .then(function () {
+         res.send({
+           message: `Visitor created`
+         })
+       })
+       .catch(e => {
+         res.send({
+           error: 'Error adding visitor to database.'
+         })
+       })
+   })
 }
