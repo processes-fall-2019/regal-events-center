@@ -64,6 +64,12 @@
           <li class="list-inline-item"><a class="btn-floating btn-lg btn-fb mx-1"><i class="fab fa-facebook"> </i></a></li>
           <li class="list-inline-item"><a class="btn-floating btn-lg btn-tw mx-1"><i class="fab fa-twitter"> </i></a></li>
         </ul>
+
+        <br />
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiERNEqFlREsJ4fdmOZUTzi717yqKncjrU-D0bNwzfwI8r7A/viewform?usp=sf_link">
+          Please click here to leave us feedback on how to improve our site!
+        </a>
+
       </div>
       <br />
       <div class="footer-copyright text-center py-3">
