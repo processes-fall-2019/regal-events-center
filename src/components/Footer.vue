@@ -66,7 +66,7 @@
         </ul>
 
         <br />
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiERNEqFlREsJ4fdmOZUTzi717yqKncjrU-D0bNwzfwI8r7A/viewform?usp=sf_link">
+        <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfiERNEqFlREsJ4fdmOZUTzi717yqKncjrU-D0bNwzfwI8r7A/viewform?usp=sf_link">
           Please click here to leave us feedback on how to improve our site!
         </a>
 
