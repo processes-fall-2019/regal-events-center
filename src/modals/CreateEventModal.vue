@@ -77,6 +77,10 @@ export default {
       })
 
       this.modal = false
+      location.reload()
+
+      // Object.assign(this.$data, this.$options.data.call(this))
+      // this.getContacts()
     }
   },
 }
