@@ -7,6 +7,9 @@
       </b-alert>
     </div>
     <h1> Upcoming Events </h1>
+    <h5>
+      click on any event on the calendar to view its details or attend it!
+    </h5>
     <br>
 
     <div class="calendar">
@@ -49,31 +52,7 @@
           <mdb-modal-title>Input your information to attend this event</mdb-modal-title>
         </mdb-modal-header>
         <mdb-modal-body>
-          <!-- <input class="my-4"></input> -->
           <h5> Attending Event:  {{ this.eventName }} </h5>
-
-          <!-- <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-            <b-form-input
-              class="my-4"
-              v-model="fullName"
-              required
-              placeholder="Enter your full name"
-            ></b-form-input>
-            <b-form-input
-              class="my-4"
-              v-model="email"
-              type="email"
-              required
-              placeholder="Enter your email"
-            ></b-form-input>
-            <b-form-input
-              class="my-4"
-              v-model="number"
-              type="number"
-              placeholder="Enter your phone number (optional)"
-            ></b-form-input>
-          </b-form> -->
-
           <b-form v-if="show" @submit="onSubmit" class="form-horizontal">
             <div>
               <div>
@@ -98,6 +77,14 @@
                   type="number"
                   placeholder="Enter your phone number (optional)"
                 ></b-form-input>
+
+                <b-form-input
+                  class="my-4"
+                  v-model="numPeople"
+                  type="number"
+                  required
+                  placeholder="Enter the number of people that will be attending (including you)"
+                ></b-form-input>
               </div>
             </div>
             <div>
@@ -107,12 +94,7 @@
               </div>
             </div>
           </b-form>
-
         </mdb-modal-body>
-        <!-- <mdb-modal-footer>
-          <mdb-btn color="danger" @click.native="modal2 = false">Close</mdb-btn>
-          <b-button class="submitButton" type="submit" @click="register" color="success">Attend</b-button>
-        </mdb-modal-footer> -->
       </mdb-modal>
     </div>
     <br />
@@ -142,6 +124,7 @@ export default {
       modal: false,
       modal2: false,
       eventName: '',
+      numPeople: '',
       dateHeld: '',
       organizer: '',
       comments: '',
@@ -203,10 +186,14 @@ export default {
 
       this.modal2 = false
 
-      // await AuthenticationService.addVisitor({
-      //   email: this.email,
-      //   message: this.message
-      // })
+      await AuthenticationService.sendConfirmationEmail({
+        name: this.fullName,
+        email: this.email,
+        number: this.number,
+        numPeople: this.numPeople,
+        eventName: this.eventName,
+        eventDate: this.dateHeld
+      })
 
     },
     onReset () {
@@ -215,7 +202,7 @@ export default {
       this.number = ''
       this.showDismissibleAlert = false
       this.modal2 = false
-    }
+    },
   },
   async created () {
     try {
