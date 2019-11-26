@@ -46,7 +46,6 @@
 
     </modal>
 
-    <CreateEventModal></CreateEventModal>
 
     <br />
     <br />
@@ -100,7 +99,6 @@ import NavigationBar from './NavigationBar'
 import Footer from './Footer'
 import VueBootstrap4Table from 'vue-bootstrap4-table'
 import AuthenticationService from '../services/AuthenticationService'
-import CreateEventModal from '../modals/CreateEventModal'
 
 export default {
   name: 'AdminPage',
@@ -207,7 +205,6 @@ export default {
     NavigationBar,
     Footer,
     VueBootstrap4Table,
-    CreateEventModal
   },
   methods: {
     openModal (row) {
@@ -231,6 +228,11 @@ export default {
     async deleteEvent (row) {
       // eslint-disable-next-line
       console.log(row);
+      // let del
+      // alert("Are you sure you want to delete this event?")
+      await AuthenticationService.deleteEvent({
+        data: row
+      })
     }
   },
   async created () {
