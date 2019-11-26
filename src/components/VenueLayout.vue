@@ -7,7 +7,7 @@
     <div class="layout">
       <b-card no-body class="dark">
         <b-tabs card>
-          <b-tab no-body title="Main Room">
+          <b-tab no-body title="Main Room" title-link-class="text-light">
             <b-card-img bottom img :src="require('@/assets/IMG_0393.png')"></b-card-img>
             <b-card-footer>
               Pricing: $150.00 per hour, 4 hour minimum.
@@ -20,7 +20,7 @@
             </b-card-footer>
           </b-tab>
 
-          <b-tab no-body title="East Wing">
+          <b-tab no-body title="East Wing" title-link-class="text-light">
             <b-card-img bottom img :src="require('@/assets/IMG_0312.png')"></b-card-img>
             <b-card-footer>
               Pricing: $75.00 per hour, 4 hour minimum.
@@ -30,7 +30,7 @@
             </b-card-footer>
           </b-tab>
 
-          <b-tab no-body title="West Wing">
+          <b-tab no-body title="West Wing" title-link-class="text-light">
             <b-card-img bottom img :src="require('@/assets/IMG_0327.png')"></b-card-img>
             <b-card-footer>
               Pricing: $75.00 per hour, 4 hour minimum.
@@ -40,7 +40,7 @@
             </b-card-footer>
           </b-tab>
 
-          <b-tab no-body title="South Wing">
+          <b-tab no-body title="South Wing" title-link-class="text-light">
             <b-card-img bottom img :src="require('@/assets/IMG_1838.png')"></b-card-img>
             <b-card-footer>
               Pricing: $75.00 per hour, 4 hour minimum.
@@ -50,7 +50,7 @@
             </b-card-footer>
           </b-tab>
 
-          <b-tab no-body title="Additional Info">
+          <b-tab no-body title="Additional Info" title-link-class="text-light">
             <b-card-footer>
               Kitchen use: $75.00 per hour, 4 hour minimum.
             </b-card-footer>
@@ -97,5 +97,10 @@ export default {
 .dark {
   background-color:#2E282A;
   color:#FFFAF2;
+}
+
+.col {
+  color: white;
+  text-decoration: none;
 }
 </style>
