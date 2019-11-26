@@ -35,14 +35,13 @@
                 <b-dropdown-item href="#/pastevents">Past Events</b-dropdown-item>
               </b-nav-item-dropdown>
 
-              <b-nav-item-dropdown text="Venue" right>
+              <!-- <b-nav-item-dropdown text="Venue" right>
                 <b-dropdown-item href="#/venuelayout">Layouts and Pricing</b-dropdown-item>
                 <b-dropdown-item href="#/bookvenue">Book Venue</b-dropdown-item>
-              </b-nav-item-dropdown>
-
-              <!-- <b-nav-item-dropdown text="Community" right>
-                <b-dropdown-item href="#/bulletin">Bulletin</b-dropdown-item>
               </b-nav-item-dropdown> -->
+
+              <b-nav-item href="#/venuelayout">Layouts and Pricing</b-nav-item>
+              <b-nav-item href="#/bookvenue">Book Venue</b-nav-item>
               <b-nav-item href="#/bulletin">Community Bulletin</b-nav-item>
             </b-navbar-nav>
           </b-navbar>
