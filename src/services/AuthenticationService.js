@@ -28,16 +28,7 @@ export default {
   sendConfirmationEmail (credentials) {
     return Api().post('sendConfirmationEmail', credentials)
   },
-  // register (credentials) {
-  //   return Api().post('register', credentials)
-  // },
-  // login (credentials) {
-  //   return Api().post('login', credentials)
-  // },
-  // upload (credentials) {
-  //   return Api().post('upload', credentials)
-  // },
-  // getFiles (credentials) {
-  //   return Api().get('getFiles', credentials)
-  // }
+  deleteEvent (credentials) {
+    return Api().delete('deleteEvent', credentials)
+  },
 }
