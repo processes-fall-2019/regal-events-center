@@ -31,4 +31,7 @@ export default {
   deleteEvent (credentials) {
     return Api().delete('deleteEvent', credentials)
   },
+  deleteVisitor (credentials) {
+    return Api().delete('deleteVisitor', credentials)
+  },
 }
