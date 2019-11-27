@@ -71,6 +71,10 @@
          <!-- <button class="btn btn-primary" @click="openVisitorModal(props.row)">View Details</button> -->
          <button @click="openVisitorModal(props.row)" class="btn btn-primary">View Details</button>
        </template>
+       <template slot="delete_visitor" slot-scope="props">
+         <!-- <button class="btn btn-primary" @click="openVisitorModal(props.row)">View Details</button> -->
+         <button @click="deleteVisitor(props.row)" class="btn btn-danger">Delete</button>
+       </template>
       </vue-bootstrap4-table>
     </div>
 
@@ -187,6 +191,10 @@ export default {
         label: "",
         name: "open_modal",
         sort: false,
+      },{
+        label: "",
+        name: "delete_visitor",
+        sort: false,
       }],
       config: {
         pagination: false,
@@ -234,10 +242,26 @@ export default {
       // eslint-disable-next-line
       console.log(row);
 
-      let del = confirm("Are you sure you want to delete this event?")
+      let del = confirm("Are you sure you want to permanently delete this event?")
 
       if (del) {
         await AuthenticationService.deleteEvent({
+          data: row
+        })
+      } else {
+        return false
+      }
+
+      location.reload()
+    },
+    async deleteVisitor (row) {
+      // eslint-disable-next-line
+      console.log(row);
+
+      let del = confirm("Are you sure you want to permanently delete this visitor?")
+
+      if (del) {
+        await AuthenticationService.deleteVisitor({
           data: row
         })
       } else {
