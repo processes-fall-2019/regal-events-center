@@ -100,8 +100,8 @@
 
                 <b-form-group id="input-group-6">
                   <b-form-checkbox-group v-model="form.checked" id="checkboxes-6">
-                    <b-form-checkbox value="me">Check me out</b-form-checkbox>
-                    <b-form-checkbox value="that">Check that out</b-form-checkbox>
+                    <b-form-checkbox value="me">I will need catering</b-form-checkbox>
+                    <b-form-checkbox value="that">I will NOT need catering</b-form-checkbox>
                   </b-form-checkbox-group>
                 </b-form-group>
 
