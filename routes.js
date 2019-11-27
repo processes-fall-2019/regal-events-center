@@ -134,6 +134,25 @@ module.exports = (app, knex) => {
    })
 
 
+   app.delete('/deleteVisitor', async (req, res) => {
+    await knex('visitors')
+      .where({
+        id: req.body.id
+      })
+      .del()
+      .then(function () {
+        res.send({
+          message: `Visitor deleted`
+        })
+      })
+      .catch(e => {
+        res.send({
+          error: 'Error deleting visitor'
+        })
+      })
+   })
+
+
    app.post('/addVisitor', async (req, res) => {
     await knex('visitors')
       .insert({
