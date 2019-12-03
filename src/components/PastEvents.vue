@@ -88,9 +88,9 @@ export default {
         },
       ],
       test: 1,
-      eventName: '',
-      dateHeld: '',
-      organizer: '',
+      eventName: 'Thanksgiving Potluck',
+      dateHeld: 'Nov 27th 2019',
+      organizer: 'R.E.C',
       modal: false,
       rows: [],
       columns: [{
