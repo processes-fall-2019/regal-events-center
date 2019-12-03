@@ -134,6 +134,30 @@ module.exports = (app, knex) => {
    })
 
 
+   app.post('/markFinished', async (req, res) => {
+     console.log(req.body);
+     
+    await knex('events')
+      .where({
+        id: req.body.id
+      })
+      .update({
+        event_finished: req.body.event_finished
+      })
+      .then(function () {
+        res.send({
+          message: `Event deleted`
+        })
+      })
+      .catch(e => {
+        res.send({
+          error: 'Error deleting event'
+        })
+      })
+   })
+
+
+
    app.delete('/deleteVisitor', async (req, res) => {
     await knex('visitors')
       .where({
