@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavigationBar></NavigationBar>
-    <h1> Bulletin </h1>
+    <h1> Community Bulletin </h1>
     <br />
     <br />
 
