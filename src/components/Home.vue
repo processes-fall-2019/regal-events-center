@@ -8,7 +8,7 @@
 
     <!--Carousel-->
     <div class="container-fluid img-padding" >
-      <mdb-carousel :interval="8000" showControls showIndicators>
+      <mdb-carousel class="siz" :interval="8000" showControls showIndicators>
         <mdb-carousel-item img :src="require('@/assets/IMG_0286.png')" alt="First slide" />
         <mdb-carousel-item img :src="require('@/assets/IMG_6930.png')" alt="Second slide" />
         <mdb-carousel-item img :src="require('@/assets/IMG_0273.png')" alt="Third slide" />
@@ -16,26 +16,24 @@
     </div>
     <br />
     <br />
+    <br />
+    <br />
     <b-container>
       <b-row>
-        <b-col>
+        <b-col class="padd">
           <div class="panel-body back">
             <b-card class="dark">
               <div class="panel-heading mid txt"> Our Mission </div>
               <b-col>
                  <br>
-                 <p class="mission-txt">Here at Regal Events Center it is our mission to provide </p>
-                 <p class="mission-txt">an all-inclusive multicultural environment for advancement</p>
-                 <p class="mission-txt">of understanding and cooperation within our community. </p>
+                 <p class="mission-txt">Here at Regal Events Center it is our mission to provide an all-inclusive multicultural environment for advancement of understanding and cooperation within our community. We strive to provide a healthy, safe, and productive environment for all our visitors and employees.</p>
                  <br />
-                 <p class="mission-txt">We strive to provide a healthy, safe, and productive environment for all our visitors and employees.</p>
-                 <br>
                  <br>
               </b-col>
             </b-card>
           </div>
         </b-col>
-        <b-col>
+        <b-col class="pad">
           <br />
           <b-card class="dark">
             <div class="panel-heading mid txt"> Want to learn more? Sign up for our newsletters. </div>
@@ -70,6 +68,9 @@
         </b-col>
       </b-row>
     </b-container>
+    <br />
+    <br />
+    <br />
     <br />
     <Footer> </Footer>
   </div>
@@ -176,7 +177,7 @@ a {
 }
 
 .img-padding {
-  /* padding-top: 70px; */
+  /* padding-bottom: 70px; */
 }
 
 .cancelButton {
@@ -199,5 +200,17 @@ a {
 
 .mission-txt {
   font-size: 17.5px;
+}
+
+.siz {
+  /* height: 680pt; */
+}
+
+.pad {
+  padding-left: 5%;
+}
+
+.padd {
+  padding-right: 5%;
 }
 </style>
