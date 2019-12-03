@@ -31,18 +31,21 @@
     </div>
 
     <modal
-    :name="modalName"
-    height="auto"
-    width="1000px"
-    :scrollable="true"
-    @before-open="beforeOpen">
+      :name="modalName"
+      height="auto"
+      width="1000px"
+      :scrollable="true"
+      @before-open="beforeOpen">
 
-    <h4 class="my-4">&nbsp; Event name: {{ this.eventName }}</h4>
-    <h4 class="my-4">&nbsp; Date held: {{ this.dateHeld }}</h4>
-    <h4 class="my-4">&nbsp; Organizer: {{ this.organizer }}</h4>
-    <h4 class="my-4">&nbsp; Start time: {{ this.startTime }}</h4>
-    <h4 class="my-4">&nbsp; End time: {{ this.endTime }}</h4>
-    <!-- <h4 class="my-4">Event finished? {{ this.event_finished }}</h4> -->
+      <h4 class="my-4">&nbsp; Event name: {{ this.eventName }}</h4>
+      <h4 class="my-4">&nbsp; Date held: {{ this.dateHeld }}</h4>
+      <h4 class="my-4">&nbsp; Organizer: {{ this.organizer }}</h4>
+      <h4 class="my-4">&nbsp; Start time: {{ this.startTime }}</h4>
+      <h4 class="my-4">&nbsp; End time: {{ this.endTime }}</h4>
+      <h4 class="my-4">&nbsp; Event finished?: {{ this.finished }}</h4>
+      &nbsp;&nbsp;&nbsp;<button :disabled="this.disable" @click="eventFinished()" class="btn-primary"> Mark as finished </button>
+      <br />
+      <br />
 
     </modal>
 
@@ -112,6 +115,9 @@ export default {
   data () {
     return {
       componentKey: 0,
+      disable: false,
+      finished: false,
+      id: '',
       visitorName: '',
       visitorEmail: '',
       eventAttended: '',
@@ -222,6 +228,30 @@ export default {
   methods: {
     openModal (row) {
       this.$modal.show('events-modal', { row })
+      this.finished = row.event_finished
+      this.id = row.id
+
+      if (this.finished) {
+        this.disable = true
+      }
+
+        // eslint-disable-next-line
+      console.log("finished", this.finished);
+    },
+    async eventFinished () {
+
+      let del = confirm("Are you sure you want to mark this event as finished? (this can only be undone through the database)")
+
+      if (del) {
+        this.finished = true
+        
+        await AuthenticationService.markFinished({
+          event_finished: this.finished,
+          id: this.id
+        })
+      } else {
+        return false
+      }
     },
     beforeOpen (event) {
       this.eventName = event.params.row.name
