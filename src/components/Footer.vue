@@ -11,7 +11,9 @@
         <mdb-row>
           <mdb-col md="6" class="center">
             <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Come visit us!</h5>
-            <img class="image" src="@/assets/regal-map.png"/>
+            <a target="_blank" href="https://www.google.com/maps/place/Casselberry,+FL+32707/@28.6679392,-81.3472437,17z/data=!3m1!4b1!4m5!3m4!1s0x88e771fc709ad4d7:0x3283e0b5cba6fd8e!8m2!3d28.667934!4d-81.345055">
+              <img class="image" src="@/assets/regal-map.png"/>
+            </a>
           </mdb-col>
           <mdb-col md="4">
             <ul class="list-unstyled">
@@ -22,7 +24,7 @@
                 <p> Casselberry, FL, 32707</p>
                 <p> 407-353-3306 </p>
                 <br />
-                <b-button href="https://www.google.com/maps/place/Casselberry,+FL+32707/@28.6679392,-81.3472437,17z/data=!3m1!4b1!4m5!3m4!1s0x88e771fc709ad4d7:0x3283e0b5cba6fd8e!8m2!3d28.667934!4d-81.345055" size="lg" pill variant="primary" class="but">Get Directions</b-button>
+                <b-button target="_blank" href="https://www.google.com/maps/place/Casselberry,+FL+32707/@28.6679392,-81.3472437,17z/data=!3m1!4b1!4m5!3m4!1s0x88e771fc709ad4d7:0x3283e0b5cba6fd8e!8m2!3d28.667934!4d-81.345055" size="lg" pill variant="primary" class="but">Get Directions</b-button>
               </div>
               <br />
             </ul>
