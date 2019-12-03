@@ -22,5 +22,6 @@ export default {
   margin-top: 0px;
   /* background-color: lightblue; */
   background-image: url("grad.png");
+  background-size: cover;
 }
 </style>
