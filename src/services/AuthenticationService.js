@@ -34,4 +34,7 @@ export default {
   deleteVisitor (credentials) {
     return Api().delete('deleteVisitor', credentials)
   },
+  markFinished (credentials) {
+    return Api().post('markFinished', credentials)
+  },
 }
