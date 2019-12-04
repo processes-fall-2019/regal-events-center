@@ -7,9 +7,10 @@
       </b-alert>
     </div>
     <h1> Upcoming Events </h1>
-    <h5>
+    <br />
+    <h4>
       click on any event on the calendar to view its details or attend it!
-    </h5>
+    </h4>
     <br>
 
     <div class="calendar">
