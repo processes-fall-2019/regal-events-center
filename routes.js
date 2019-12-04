@@ -9,7 +9,7 @@ module.exports = (app, knex) => {
      .then()
      .catch(e => {
        res.send({
-         error: 'Error when fetching user from database.'
+         error: 'Error when fetching user from database.' + e
        })
      })
 
@@ -109,7 +109,7 @@ module.exports = (app, knex) => {
       })
       .catch(e => {
         res.send({
-          error: 'Error creating event'
+          error: 'Error creating event' + e
         })
       })
    })
@@ -128,15 +128,13 @@ module.exports = (app, knex) => {
       })
       .catch(e => {
         res.send({
-          error: 'Error deleting event'
+          error: 'Error deleting event' + e
         })
       })
    })
 
 
    app.post('/markFinished', async (req, res) => {
-     console.log(req.body);
-     
     await knex('events')
       .where({
         id: req.body.id
@@ -151,7 +149,7 @@ module.exports = (app, knex) => {
       })
       .catch(e => {
         res.send({
-          error: 'Error deleting event'
+          error: 'Error deleting event' + e
         })
       })
    })
@@ -171,7 +169,7 @@ module.exports = (app, knex) => {
       })
       .catch(e => {
         res.send({
-          error: 'Error deleting visitor'
+          error: 'Error deleting visitor' + e
         })
       })
    })
@@ -189,7 +187,7 @@ module.exports = (app, knex) => {
       })
       .catch(e => {
         res.send({
-          error: 'Error adding visitor to database.'
+          error: 'Error adding visitor to database.' + e
         })
       })
    })
@@ -236,7 +234,7 @@ module.exports = (app, knex) => {
        })
        .catch(e => {
          res.send({
-           error: 'Error adding visitor to database.'
+           error: 'Error adding visitor to database.' + e
          })
        })
    })
@@ -278,7 +276,7 @@ module.exports = (app, knex) => {
        })
        .catch(e => {
          res.send({
-           error: 'Error adding visitor to database.'
+           error: 'Error adding visitor to database.' + e
          })
        })
    })
