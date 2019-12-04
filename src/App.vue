@@ -20,8 +20,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
-  /* background-color: lightblue; */
-  background-image: url("grad.png");
+  background-color: lightblue;
+  /* background-image: url("grad.png"); */
   background-size: cover;
 }
 </style>
