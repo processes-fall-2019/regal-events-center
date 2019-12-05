@@ -6,14 +6,11 @@
       <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
       <!-- <meta name="viewport" content="width=device-width"> -->
     </head>
-    <!-- <body class="front"> -->
-      <!-- Navbar -->
-      <!-- <nav class="navbar navbar-inverse navbar-static-top noSpace back"> -->
+    <!-- <b-navbar class="this" toggleable="lg" type="dark" variant="dark">
+      <b-nabvar-nav>
+      </b-nabvar-nav>
+    </b-navbar> -->
         <div class="container-fluid">
-          <!-- <b-navbar type="dark" variant="light">
-            <h1> Regal Events Center </h1>
-            <img src="@/assets/rec-logo.png"/>
-          </b-navbar> -->
           <div>
             <img class="img-fluid center" src="@/assets/logooo.png"/>
           </div>
@@ -21,8 +18,6 @@
           <b-navbar class="pos" toggleable="lg" type="dark" variant="dark">
             <b-navbar-nav>
               <b-nav-item href="#/">Home</b-nav-item>
-              <!-- Navbar dropdowns -->
-              <!-- TODO: Fix dropdown text size -->
               <b-nav-item-dropdown text="About Us" right>
                 <b-dropdown-item class="text" href="#/grace">G.R.A.C.E</b-dropdown-item>
                 <b-dropdown-item href="#/testimonials">Testimonials</b-dropdown-item>
@@ -35,18 +30,12 @@
                 <b-dropdown-item href="#/pastevents">Past Events</b-dropdown-item>
               </b-nav-item-dropdown>
 
-              <!-- <b-nav-item-dropdown text="Venue" right>
-                <b-dropdown-item href="#/venuelayout">Layouts and Pricing</b-dropdown-item>
-                <b-dropdown-item href="#/bookvenue">Book Venue</b-dropdown-item>
-              </b-nav-item-dropdown> -->
-
               <b-nav-item href="#/venuelayout">Layouts and Pricing</b-nav-item>
               <b-nav-item href="#/bookvenue">Book Venue</b-nav-item>
               <b-nav-item href="#/bulletin">Community Bulletin</b-nav-item>
             </b-navbar-nav>
           </b-navbar>
         </div>
-    <!-- </body> -->
   </div>
 </template>
 
