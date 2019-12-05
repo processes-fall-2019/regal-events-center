@@ -88,9 +88,6 @@ export default {
         date: '12-07-2019'
       },
     ]
-
-    // this.$set('events', this.events);
-
   },
   methods: {
     addEvent () {
