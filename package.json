@@ -16,7 +16,7 @@
     "bootstrap-vue": "^2.0.4",
     "core-js": "^2.6.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "joi": "^14.3.1",
     "knex": "^0.19.5",
     "mdbootstrap": "^4.8.11",
